@@ -23,6 +23,14 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
 
+  useEffect(() => {
+    const fetchAllOutfits = async () => {
+      const data = await blogService.index()
+      setOutfits(data)
+    }
+    if (user) fetchAllOutfits()
+  }, [user])
+
   const handleLogout = () => {
     authService.logout()
     setUser(null)
@@ -35,9 +43,9 @@ function App() {
 
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" element={<Landing user={user} handleLogout={handleLogout}/>} />
         <Route
           path="/profiles"
           element={
