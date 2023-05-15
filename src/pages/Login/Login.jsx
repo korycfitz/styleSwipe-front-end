@@ -30,7 +30,7 @@ const LoginPage = ({ handleAuthEvt }) => {
       }
       await authService.login(formData)
       handleAuthEvt()
-      navigate(`/outfits/${outfit._id}`)
+      navigate(`/outfits/:outfitId`)
     } catch (err) {
       console.log(err)
       setMessage(err.message)
@@ -44,7 +44,7 @@ const LoginPage = ({ handleAuthEvt }) => {
   }
 
   return (
-    <body className={styles.container}>
+    <main className={styles.container}>
       <h1>Log In</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
@@ -73,7 +73,7 @@ const LoginPage = ({ handleAuthEvt }) => {
           </button>
         </div>
       </form>
-    </body>
+    </main>
   )
 }
 
