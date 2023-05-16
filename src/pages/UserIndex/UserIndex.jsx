@@ -6,4 +6,4 @@ const userIndex = () => {
   )
 }
 
-export default userIndex;
+export default userIndex
