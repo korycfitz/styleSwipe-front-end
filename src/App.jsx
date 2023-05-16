@@ -29,6 +29,7 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
+    // detchAllOutfits will serve as index
     const fetchAllOutfits = async () => {
       const data = await outfitService.index()
       console.log(outfits)
