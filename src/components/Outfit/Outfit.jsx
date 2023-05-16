@@ -7,6 +7,7 @@ import Comments from '../Comments/Comments'
 import NewComment from '../NewComment/NewComment'
 import AuthorInfo from '../AuthorInfo/AuthorInfo'
 import OutfitIcons from '../OutfitIcons/OutfitIcons'
+import Swipe from '../Swipe/Swipe'
 
 const Outfit = (props) => {
   return (
@@ -21,6 +22,7 @@ const Outfit = (props) => {
         <Outfit />
         <Comments />
         <NewComment />
+        <Swipe />
       </div>
     </main>
   )
