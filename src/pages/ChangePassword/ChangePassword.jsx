@@ -1,10 +1,8 @@
-// npm modules
+//npm modules
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'
 // services
 import * as authService from '../../services/authService'
-
 // css
 import styles from './ChangePassword.module.css'
 
@@ -17,12 +15,12 @@ const ChangePassword = ({ handleAuthEvt }) => {
     newPasswordConf: '',
   })
 
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     setMessage('')
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
-  const handleSubmit = async evt => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault()
     try {
       await authService.changePassword(formData)
@@ -44,35 +42,43 @@ const ChangePassword = ({ handleAuthEvt }) => {
       <h1>Change Password</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Current Password
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          New Password
-          <input
-            type="password"
-            value={newPassword}
-            name="newPassword"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Confirm New Password
-          <input
-            type="password"
-            value={newPasswordConf}
-            name="newPasswordConf"
-            onChange={handleChange}
-          />
-        </label>
-        <div>
-          <Link to="/">Cancel</Link>
+        <div className={styles.inputGroup}>
+          <label className={styles.label}>
+            Current Password
+            <input
+              type="password"
+              value={password}
+              name="password"
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div className={styles.inputGroup}>
+          <label className={styles.label}>
+            New Password
+            <input
+              type="password"
+              value={newPassword}
+              name="newPassword"
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div className={styles.inputGroup}>
+          <label className={styles.label}>
+            Confirm New Password
+            <input
+              type="password"
+              value={newPasswordConf}
+              name="newPasswordConf"
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div className={styles.buttonGroup}>
+          <button className={`${styles.button} ${styles.cancel}`} onClick={() => navigate('/')}>
+            Cancel
+          </button>
           <button className={styles.button} disabled={isFormInvalid()}>
             Change Password
           </button>
@@ -83,3 +89,4 @@ const ChangePassword = ({ handleAuthEvt }) => {
 }
 
 export default ChangePassword
+

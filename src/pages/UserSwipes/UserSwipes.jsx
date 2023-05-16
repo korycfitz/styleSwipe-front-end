@@ -5,4 +5,4 @@ const UserSwipes = () => {
   )
 }
 
-export default UserSwipes;
+export default UserSwipes

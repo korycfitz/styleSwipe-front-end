@@ -21,7 +21,7 @@ import UserSwipes from './pages/UserSwipes/UserSwipes'
 import NavBar from './components/NavBar/NavBar'
 import FooterBar from './components/FooterBar/FooterBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-import OutfitCard from './components/OutfitCard/OutfitCard'
+// import OutfitCard from './components/OutfitCard/OutfitCard'
 
 // services
 import * as authService from './services/authService'
