@@ -1,9 +1,31 @@
 .container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  padding: 20px;
 }
 
-.container > p {
-  margin: 8px;
+.profileList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.profileBox {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profileImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profileName {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
 }
