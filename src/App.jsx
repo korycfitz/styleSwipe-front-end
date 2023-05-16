@@ -3,11 +3,19 @@ import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
-import Signup from './pages/Signup/Signup'
-import Login from './pages/Login/Login'
-import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import EditOutfit from './pages/EditOutfit/EditOutfit'
+import Landing from './pages/Landing/Landing'
+import Login from './pages/Login/Login'
+import Logout from './pages/Logout/Logout'
+import NewOutfit from './pages/NewOutfit/NewOutfit'
+import Profiles from './pages/Profiles/Profiles'
+import ShowOutfit from './pages/ShowOutfit/ShowOutfit'
+import Signup from './pages/Signup/Signup'
+import UserIndex from './pages/UserIndex/UserIndex'
+import UserOutfits from './pages/UserOutfits/UserOutfits'
+import UserPage from './pages/UserPage/UserPage'
+import UserSwipes from './pages/UserSwipes/UserSwipes'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -79,9 +87,36 @@ function App() {
           }
         />
         <Route
+          path='/auth/login' element={<Logout />}>
+        </Route>
+        <Route
           path='/outfits' element={<OutfitList outfits={outfits} user={user}/>}>
         </Route>
+        <Route
+          path='/outfits' element={<ShowOutfit outfits={outfits} user={user}/>}>
+        </Route>
+        <Route 
+          path='/outfits/new' element={< NewOutfit />}>
+        </Route>
+        <Route 
+          path='/users/:userId' element={< UserPage />}>
+        </Route>
+        <Route 
+          path='/users' element={< UserIndex />}>
+        </Route>
+        <Route 
+          path='/users/:userId' element={< UserSwipes />}>
+        </Route>
+        <Route 
+          path='/users/:userId/outfits' element={< UserOutfits />}>
+        </Route>
+        <Route 
+          path='/users/:userId/outfits' element={< UserOutfits />}>
+        </Route>
       </Routes>
+        <Route 
+          path='/users/:userId/outfits/edit' element={< EditOutfit />}>
+        </Route>
     </>
   )
 }

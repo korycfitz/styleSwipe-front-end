@@ -50,7 +50,7 @@ async function update(outfitFormData){
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(blogFormData)
+      body: JSON.stringify(outfitFormData)
     })
     return res.json()
   }catch (err) {
