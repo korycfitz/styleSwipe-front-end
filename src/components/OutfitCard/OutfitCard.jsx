@@ -3,10 +3,10 @@
 
 // components
 import OutfitPreview from '../OutfitPreview/OutfitPreview'
-import OutfitInfo from '../OutfitInfo/OutfitInfo'
+import OutfitInfo from '../OutfitDesc/OutfitDesc'
 
 // css
-import styles from './OutfitCard.module.css'
+// import styles from './OutfitCard.module.css'
 
 const OutfitCard = (props) => {
   return (

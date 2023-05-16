@@ -1,10 +1,14 @@
+//css
+import styles from './UserOutfits.module.css'
+
+//components
 import OutfitList from "../../components/OutfitList/OutfitList"
 
 const UserOutfits = () => {
   return (
-    <>
+    <div className={styles.container}>
       <OutfitList />
-    </>
+    </div>
   )
 }
 
