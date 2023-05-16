@@ -1,4 +1,3 @@
-// npm modules
 import { useState, useEffect } from 'react'
 
 // services
@@ -21,15 +20,21 @@ const Profiles = () => {
   if (!profiles.length) {
     return <main className={styles.container}><h1>Loading...</h1></main>
   }
-  
+
   return (
     <main className={styles.container}>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.map(profile => (
-        <p key={profile._id}>{profile.name}</p>
-      ))}
+      <h1>Hello!! This is a list of all the profiles.</h1>
+      <div className={styles.profileList}>
+        {profiles.map(profile => (
+          <div className={styles.profileBox} key={profile._id}>
+            <img src={profile.photo} alt={profile.name} className={styles.profileImage} />
+            <p className={styles.profileName}>{profile.name}</p>
+          </div>
+        ))}
+      </div>
     </main>
   )
 }
 
 export default Profiles
+
