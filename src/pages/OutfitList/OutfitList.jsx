@@ -1,8 +1,8 @@
 // components
-import OutfitCard from '../OutfitCard/OutfitCard'
+import OutfitCard from '../../components/OutfitCard/OutfitCard'
 
 // css
-import styles from '../OutfitList/OutfitList.module.css'
+import styles from './OutfitList.module.css'
 
 const OutfitList = (props) => {
   return (

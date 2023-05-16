@@ -29,7 +29,7 @@ import * as outfitService from './services/outfitService'
 
 // styles
 import './App.css'
-import OutfitList from './components/OutfitList/OutfitList'
+import OutfitList from './pages/OutfitList/OutfitList'
 
 function App() {
   const [outfits, setOutfits] = useState([])
