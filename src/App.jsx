@@ -84,10 +84,10 @@ function App() {
             <ProtectedRoute user={user}>
               <ChangePassword handleAuthEvt={handleAuthEvt} />
             </ProtectedRoute>
-          }
-        />
+          }>
+        </Route>
         <Route
-          path='/auth/login' element={<Logout />}>
+          path='/auth/logout' element={<Logout />}>
         </Route>
         <Route
           path='/outfits' element={<OutfitList outfits={outfits} user={user}/>}>
