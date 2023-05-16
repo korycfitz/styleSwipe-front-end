@@ -1,9 +1,9 @@
-import OutfitList from "../../components/OutfitList/OutfitList"
+import Outfit from "../../components/Outfit/Outfit"
 
 const UserOutfits = () => {
   return (
     <>
-      <OutfitList />
+      <Outfit />
     </>
   )
 }
