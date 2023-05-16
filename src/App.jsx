@@ -30,11 +30,12 @@ function App() {
   useEffect(() => {
     const fetchAllOutfits = async () => {
       const data = await outfitService.index()
-      console.log(data)
+      console.log(outfits._id)
       setOutfits(data)
     }
-    if (user) fetchAllOutfits()
-  }, [user])
+    fetchAllOutfits()
+  }, [])
+  
 
 
   const handleLogout = () => {
@@ -66,7 +67,7 @@ function App() {
         />
         <Route
           path="/auth/login"
-          element={<Login handleAuthEvt={handleAuthEvt} />}
+          element={<Login handleAuthEvt={handleAuthEvt} outfit={outfits._id}/>}
         />
         <Route
           path="/auth/change-password"
