@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 //services
-import * as outfitService from './services/outfitService'
+import * as outfitService from '../../services/outfitService'
 
 // css
-import styles from './OutfitDetails.module.css'
+// import styles from './OutfitDetails.module.css'
 
 const OutfitDetails = () => {
   const { outfitId } = useParams()
