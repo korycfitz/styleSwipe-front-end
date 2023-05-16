@@ -3,11 +3,19 @@ import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
-import Signup from './pages/Signup/Signup'
-import Login from './pages/Login/Login'
-import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import EditOutfit from './pages/EditOutfit/EditOutfit'
+import Landing from './pages/Landing/Landing'
+import Login from './pages/Login/Login'
+import Logout from './pages/Logout/Logout'
+import NewOutfit from './pages/NewOutfit/NewOutfit'
+import Profiles from './pages/Profiles/Profiles'
+import ShowOutfit from './pages/ShowOutfit/ShowOutfit'
+import Signup from './pages/Signup/Signup'
+import UserIndex from './pages/UserIndex/UserIndex'
+import UserOutfits from './pages/UserOutfits/UserOutfits'
+import UserPage from './pages/UserPage/UserPage'
+import UserSwipes from './pages/UserSwipes/UserSwipes'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -76,11 +84,27 @@ function App() {
             <ProtectedRoute user={user}>
               <ChangePassword handleAuthEvt={handleAuthEvt} />
             </ProtectedRoute>
-          }
-        />
+          }/>
         <Route
-          path='/outfits' element={<OutfitList outfits={outfits} user={user}/>}>
-        </Route>
+          path='/auth/logout' element={<Logout />}/>
+        <Route
+          path='/outfits' element={<OutfitList outfits={outfits} user={user}/>}/>
+        <Route
+          path='/outfits' element={<ShowOutfit outfits={outfits} user={user}/>}/>
+        <Route 
+          path='/outfits/new' element={< NewOutfit />}/>
+        <Route 
+          path='/users/:userId' element={< UserPage />}/>
+        <Route 
+          path='/users' element={< UserIndex />}/>
+        <Route 
+          path='/users/:userId' element={< UserSwipes />}/>
+        <Route 
+          path='/users/:userId/outfits' element={< UserOutfits />}/>
+        <Route 
+          path='/users/:userId/outfits' element={< UserOutfits />}/>
+        <Route 
+          path='/users/:userId/outfits/edit' element={< EditOutfit />}/>
       </Routes>
     </>
   )
