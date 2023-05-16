@@ -2,7 +2,7 @@
 import OutfitCard from '../OutfitCard/OutfitCard'
 
 // css
-import styles from './OutfitList.module.css'
+// import styles from './OutfitList.module.css'
 
 //components
 import Outfit from '../Outfit/Outfit'
