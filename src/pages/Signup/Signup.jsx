@@ -78,7 +78,7 @@ const Signup = ({ handleAuthEvt }) => {
   }
 
   return (
-    <main className={styles.container}>
+    <body className={styles.container}>
       <h1>Sign Up</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
@@ -132,7 +132,7 @@ const Signup = ({ handleAuthEvt }) => {
           </button>
         </div>
       </form>
-    </main>
+    </body>
   )
 }
 

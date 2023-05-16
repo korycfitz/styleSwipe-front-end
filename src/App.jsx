@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -12,16 +12,32 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import OutfitCard from './components/OutfitCard/OutfitCard'
 
 // services
 import * as authService from './services/authService'
+import * as outfitService from './services/outfitService'
 
 // styles
 import './App.css'
+import OutfitList from './components/OutfitList/OutfitList'
 
 function App() {
+  const [outfits, setOutfits] = useState([])
   const [user, setUser] = useState(authService.getUser())
+
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const fetchAllOutfits = async () => {
+      const data = await outfitService.index()
+      console.log(outfits)
+      setOutfits(data)
+    }
+    if (user) fetchAllOutfits()
+  }, [user])
+  
+
 
   const handleLogout = () => {
     authService.logout()
@@ -32,12 +48,11 @@ function App() {
   const handleAuthEvt = () => {
     setUser(authService.getUser())
   }
-
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" element={<Landing user={user} handleLogout={handleLogout}/>} />
         <Route
           path="/profiles"
           element={
@@ -48,11 +63,11 @@ function App() {
         />
         <Route
           path="/auth/signup"
-          element={<Signup handleAuthEvt={handleAuthEvt} />}
+          element={<Signup handleAuthEvt={handleAuthEvt} outfits={outfits}/>}
         />
         <Route
           path="/auth/login"
-          element={<Login handleAuthEvt={handleAuthEvt} />}
+          element={<Login handleAuthEvt={handleAuthEvt} outfits={outfits}/>}
         />
         <Route
           path="/auth/change-password"
@@ -62,6 +77,9 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path='/outfits' element={<OutfitList outfits={outfits} user={user}/>}>
+        </Route>
       </Routes>
     </>
   )
