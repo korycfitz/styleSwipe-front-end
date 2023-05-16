@@ -1,0 +1,53 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #fff;
+  padding: 0 30px;
+}
+
+.logoContainer {
+  font-size: 24px;
+  font-weight: bold;
+  color: black; 
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li {
+  margin: 0 20px;
+}
+
+.navLinks li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.navLinks li a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.logoutBtn {
+  background-color: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.logoutBtn:hover {
+  text-decoration: none;
+}

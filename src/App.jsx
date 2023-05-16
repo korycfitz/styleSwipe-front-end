@@ -19,6 +19,7 @@ import UserSwipes from './pages/UserSwipes/UserSwipes'
 
 // components
 import NavBar from './components/NavBar/NavBar'
+import FooterBar from './components/FooterBar/FooterBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import OutfitCard from './components/OutfitCard/OutfitCard'
 
@@ -59,7 +60,7 @@ function App() {
   }
   return (
     <>
-      {/* <NavBar user={user} handleLogout={handleLogout} /> */}
+      {<NavBar user={user} handleLogout={handleLogout} />}
       <Routes>
         <Route path="/" element={<Landing user={user} handleLogout={handleLogout}/>} />
         <Route
@@ -106,6 +107,7 @@ function App() {
         <Route 
           path='/users/:userId/outfits/edit' element={< EditOutfit />}/>
       </Routes>
+      <FooterBar user={user} />
     </>
   )
 }
