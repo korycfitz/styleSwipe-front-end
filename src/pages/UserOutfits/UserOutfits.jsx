@@ -1,10 +1,14 @@
-import Outfit from "../../components/Outfit/Outfit"
+//css
+import styles from './UserOutfits.module.css'
+
+//components
+import OutfitList from "../../components/OutfitList/OutfitList"
 
 const UserOutfits = () => {
   return (
-    <>
-      <Outfit />
-    </>
+    <div className={styles.container}>
+      <OutfitList />
+    </div>
   )
 }
 
