@@ -63,11 +63,11 @@ function App() {
         />
         <Route
           path="/auth/signup"
-          element={<Signup handleAuthEvt={handleAuthEvt} />}
+          element={<Signup handleAuthEvt={handleAuthEvt} outfits={outfits}/>}
         />
         <Route
           path="/auth/login"
-          element={<Login handleAuthEvt={handleAuthEvt} outfit={outfits._id}/>}
+          element={<Login handleAuthEvt={handleAuthEvt} outfits={outfits}/>}
         />
         <Route
           path="/auth/change-password"
@@ -78,7 +78,7 @@ function App() {
           }
         />
         <Route
-          path='/outfits' element={<OutfitList outfits={outfits}/>}>
+          path='/outfits' element={<OutfitList outfits={outfits} user={user}/>}>
         </Route>
       </Routes>
     </>

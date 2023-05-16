@@ -8,7 +8,7 @@ const OutfitList = (props) => {
   return (
     <main>
       {props.outfits.map((outfit, idx) => (
-        <OutfitCard key={idx} outfit={outfit}/>
+        <OutfitCard key={idx} outfit={outfit} user={props.user}/>
       ))}
     </main>
   )

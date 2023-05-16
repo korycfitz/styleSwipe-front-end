@@ -1,13 +1,12 @@
 
 
-const Icon = ({ category }) => {
-  const icons = {
-    Add: add,
-    Edit: edit,
-  }
+const Icon = () => {
+
 
   return (
-    <img className="icon" src={icons[category]} alt={`A ${category} icon.`} />
+    <>
+
+    </>
   )
 }
 
