@@ -8,7 +8,7 @@ import * as authService from '../../services/authService'
 // css
 import styles from './Login.module.css'
 
-const LoginPage = ({ handleAuthEvt }, props) => {
+const LoginPage = ({ handleAuthEvt }) => {
   const navigate = useNavigate()
 
   const [message, setMessage] = useState('')
@@ -30,7 +30,7 @@ const LoginPage = ({ handleAuthEvt }, props) => {
       }
       await authService.login(formData)
       handleAuthEvt()
-      navigate(`/outfits/`) // <-- will re-drect to random :outfitId page. Props will allow ID to go inside params.
+      navigate(`/outfits`) // <-- will re-drect to random :outfitId page. Props will allow ID to go inside params.
     } catch (err) {
       console.log(err)
       setMessage(err.message)

@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import OutfitCard from './components/OutfitCard/OutfitCard'
 
 // services
 import * as authService from './services/authService'
@@ -19,9 +20,10 @@ import * as outfitService from './services/outfitService'
 
 // styles
 import './App.css'
+import OutfitList from './components/OutfitList/OutfitList'
 
 function App() {
-  const [outfits, setOutfits] = useState(authService.getUser())
+  const [outfits, setOutfits] = useState([])
   const [user, setUser] = useState(authService.getUser())
 
   const navigate = useNavigate()
@@ -29,11 +31,11 @@ function App() {
   useEffect(() => {
     const fetchAllOutfits = async () => {
       const data = await outfitService.index()
-      console.log(outfits._id)
+      console.log(outfits)
       setOutfits(data)
     }
-    fetchAllOutfits()
-  }, [])
+    if (user) fetchAllOutfits()
+  }, [user])
   
 
 
@@ -75,6 +77,9 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path='/outfits' element={<OutfitList outfits={outfits}/>}>
+        </Route>
       </Routes>
     </>
   )

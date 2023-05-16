@@ -1,6 +1,4 @@
-// assets
-import add from '../../assets/icons/add.svg'
-import edit from '../../assets/icons/edit.svg'
+
 
 const Icon = ({ category }) => {
   const icons = {
