@@ -17,7 +17,6 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as outfitService from './services/outfitService'
 
-
 // styles
 import './App.css'
 
@@ -47,12 +46,11 @@ function App() {
   const handleAuthEvt = () => {
     setUser(authService.getUser())
   }
-
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" element={<Landing user={user} handleLogout={handleLogout}/>} />
         <Route
           path="/profiles"
           element={
