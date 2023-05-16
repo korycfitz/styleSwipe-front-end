@@ -84,39 +84,28 @@ function App() {
             <ProtectedRoute user={user}>
               <ChangePassword handleAuthEvt={handleAuthEvt} />
             </ProtectedRoute>
-          }>
-        </Route>
+          }/>
         <Route
-          path='/auth/logout' element={<Logout />}>
-        </Route>
+          path='/auth/logout' element={<Logout />}/>
         <Route
-          path='/outfits' element={<OutfitList outfits={outfits} user={user}/>}>
-        </Route>
+          path='/outfits' element={<OutfitList outfits={outfits} user={user}/>}/>
         <Route
-          path='/outfits' element={<ShowOutfit outfits={outfits} user={user}/>}>
-        </Route>
+          path='/outfits' element={<ShowOutfit outfits={outfits} user={user}/>}/>
         <Route 
-          path='/outfits/new' element={< NewOutfit />}>
-        </Route>
+          path='/outfits/new' element={< NewOutfit />}/>
         <Route 
-          path='/users/:userId' element={< UserPage />}>
-        </Route>
+          path='/users/:userId' element={< UserPage />}/>
         <Route 
-          path='/users' element={< UserIndex />}>
-        </Route>
+          path='/users' element={< UserIndex />}/>
         <Route 
-          path='/users/:userId' element={< UserSwipes />}>
-        </Route>
+          path='/users/:userId' element={< UserSwipes />}/>
         <Route 
-          path='/users/:userId/outfits' element={< UserOutfits />}>
-        </Route>
+          path='/users/:userId/outfits' element={< UserOutfits />}/>
         <Route 
-          path='/users/:userId/outfits' element={< UserOutfits />}>
-        </Route>
+          path='/users/:userId/outfits' element={< UserOutfits />}/>
+        <Route 
+          path='/users/:userId/outfits/edit' element={< EditOutfit />}/>
       </Routes>
-        <Route 
-          path='/users/:userId/outfits/edit' element={< EditOutfit />}>
-        </Route>
     </>
   )
 }
