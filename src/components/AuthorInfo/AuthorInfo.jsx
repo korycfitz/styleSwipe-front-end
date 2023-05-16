@@ -2,7 +2,7 @@
 import DateCard from '../DateCard/DateCard'
 
 // css
-import styles from './AuthorInfo/AuthorInfo.module.css'
+// import styles from './AuthorInfo/AuthorInfo.module.css'
 
 const AuthorInfo = (props) => {
   const { content } = props
