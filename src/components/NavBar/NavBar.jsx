@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom"
 import styles from "./NavBar.module.css"
+import logo from "../../assets/styleswipe_logo.png"
+
 
 const NavBar = ({ user, handleLogout }) => {
   const handleLogoClick = () => {
@@ -9,7 +11,13 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logoContainer} onClick={handleLogoClick}>
-        <img src="" alt="StyleSwipe Logo" className={styles.logo} />
+      <img
+          id="app-logo"
+          src={logo}
+          width="50"
+          height="50"
+          alt="StyleSwipe"
+        />
         <h1>StyleSwipe</h1>
       </div>
       <ul className={styles.navLinks}>
