@@ -65,7 +65,7 @@ const Signup = ({ handleAuthEvt }) => {
       handleAuthEvt()
       //this is the correct navigation, but we need to pick a random outfit to navigate to, and navigate to a specific location if no outfits exist, that the user has not swiped on
       // navigate(`/outfits/${outfitId}`)
-      navigate(`/outfits/6463c2044545ecb14bd59823`) //this is hard coded in
+      navigate(`/outfits/6464ddb3b1cb7ba415749d1e`) //this is hard coded in
     } catch (err) {
       console.log(err)
       setMessage(err.message)
