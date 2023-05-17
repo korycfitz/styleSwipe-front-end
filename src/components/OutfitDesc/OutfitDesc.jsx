@@ -1,6 +1,6 @@
 
 // css
-import styles from './OutfitDesc.module.css'
+// import styles from './OutfitDesc.module.css'
 
 
 const OutfitDesc = (props) => {

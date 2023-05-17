@@ -30,7 +30,7 @@ const LoginPage = ({ handleAuthEvt }) => {
       }
       await authService.login(formData)
       handleAuthEvt()
-      navigate(`/outfits/:outfitId`) // <-- will re-drect to random :outfitId page. Props will allow ID to go inside params.
+      navigate(`/outfits`) // <-- will re-drect to random :outfitId page. Props will allow ID to go inside params.
     } catch (err) {
       console.log(err)
       setMessage(err.message)

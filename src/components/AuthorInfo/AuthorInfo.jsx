@@ -6,6 +6,7 @@ import styles from './AuthorInfo.module.css'
 
 const AuthorInfo = ({outfit}) => {
 
+  const photo = content.author.photo
 
   return (
     <div className={styles.container}>
