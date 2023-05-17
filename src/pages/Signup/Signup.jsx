@@ -79,6 +79,10 @@ const Signup = ({ handleAuthEvt }) => {
     return !(name && email && password && password === passwordConf)
   }
 
+  const handleCancel = () => {
+    navigate('/')
+  }
+
   return (
     <body className={styles.container}>
       <h1>Sign Up</h1>
@@ -124,21 +128,27 @@ const Signup = ({ handleAuthEvt }) => {
             ref={imgInputRef}
           />
         </label>
-        <div className={styles.cancelLink}>
+        <div className={styles.buttonGroup}>
+            <button
+              className={`${styles.button} ${styles.cancel}`}
+              type="button"
+              onClick={handleCancel}
+            >
+              Cancel
+            </button>
           <button
             className={styles.button}
-            disabled={ isFormInvalid() || isSubmitted }
+            disabled={isFormInvalid() || isSubmitted}
           >
             {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
           </button>
-          <Link to="/">Cancel</Link>
-              
-    <div className={styles.loginRedirect}>
-      <NavLink to="http://localhost:5173/auth/login">Already have an Account?</NavLink>
-    </div>
         </div>
       </form>
+      <div className={styles.loginRedirect}>
+        <NavLink to="http://localhost:5173/auth/login">Already have an Account?</NavLink>
+      </div>
     </body>
+
   )
 }
 

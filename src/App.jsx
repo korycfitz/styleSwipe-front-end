@@ -6,7 +6,6 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import EditOutfit from './pages/EditOutfit/EditOutfit'
 import Landing from './pages/Landing/Landing'
 import Login from './pages/Login/Login'
-import Logout from './pages/Logout/Logout'
 import NewOutfit from './pages/NewOutfit/NewOutfit'
 import Profiles from './pages/Profiles/Profiles'
 import ShowOutfit from './pages/ShowOutfit/ShowOutfit'
@@ -93,8 +92,6 @@ function App() {
               <ChangePassword handleAuthEvt={handleAuthEvt} />
             </ProtectedRoute>
           }/>
-        <Route
-          path='/auth/logout' element={<Logout />}/>
         <Route
           path='/outfits/:outfitId' element={<ShowOutfit outfits={outfits} user={user}/>}/>
         <Route 
