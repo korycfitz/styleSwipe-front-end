@@ -29,7 +29,6 @@ import * as outfitService from './services/outfitService'
 
 // styles
 import './App.css'
-import Outfit from './components/Outfit/Outfit'
 
 function App() {
   const [outfits, setOutfits] = useState([])
@@ -89,9 +88,7 @@ function App() {
         <Route
           path='/auth/logout' element={<Logout />}/>
         <Route
-          path='/outfits' element={<Outfit outfits={outfits} user={user}/>}/>
-        <Route
-          path='/outfits' element={<ShowOutfit outfits={outfits} user={user}/>}/>
+          path='/outfits/:outfitId' element={<ShowOutfit outfits={outfits} user={user}/>}/>
         <Route 
           path='/outfits/new' element={< NewOutfit />}/>
         <Route 

@@ -1,28 +1,30 @@
+
+
 // css
 import styles from './Outfit.module.css'
 
 //components
 import OutfitCard from '../OutfitCard/OutfitCard'
-import Comments from '../Comments/Comments'
-import NewComment from '../NewComment/NewComment'
 import AuthorInfo from '../AuthorInfo/AuthorInfo'
-import OutfitIcons from '../OutfitIcons/OutfitIcons'
-import Swipe from '../Swipe/Swipe'
+// import NewComment from '../NewComment/NewComment'
+// import OutfitIcons from '../OutfitIcons/OutfitIcons'
+// import Swipe from '../Swipe/Swipe'
 
-const Outfit = (props) => {
+const Outfit = ({outfit}) => {
+
   return (
     <main>
       <div className={styles.container}>
-        {props.outfits.map((outfit, idx) => (
-          <OutfitCard key={idx} outfit={outfit} user={props.user}/>
-        ))}
-        <OutfitIcons />
-        <AuthorInfo />
-        <OutfitCard />
-        <Outfit />
-        <Comments />
-        <NewComment />
-        <Swipe />
+        <h1>Outfit Section</h1>
+        {/* THIS WORKS */}
+          <AuthorInfo outfit={outfit}/>
+          <OutfitCard outfit={outfit}/> 
+          {/* // <OutfitIcons />
+          // <AuthorInfo />
+          // <OutfitCard />
+          // <Outfit />
+          // <NewComment />
+          // <Swipe />*/}
       </div>
     </main>
   )

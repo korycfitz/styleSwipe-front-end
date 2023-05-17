@@ -1,15 +1,19 @@
 //components
 import Outfit from "../../components/Outfit/Outfit"
 import Comments from "../../components/Comments/Comments"
-import NewComment from "../../components/NewComment/NewComment"
+// import NewComment from "../../components/NewComment/NewComment"
 
-const ShowOutfit = () => {
+const ShowOutfit = (props) => {
   return (
     <>
-      <Outfit />
-      <Comments />
-      <NewComment />
-    </>
+      {props.outfits.map((outfit, idx) => (
+        <>
+          <Outfit key={idx} outfit={outfit}/>
+          <Comments key={idx} outfit={outfit}/>
+
+        </>
+      ))}
+    </>  
   )
 }
 
