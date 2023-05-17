@@ -1,13 +1,16 @@
 // npm modules
 import { useState } from "react"
 
+//services
+import * as authService from '../../services/authService'
+
 // css
 import styles from './NewOutfit.module.css'
 
-const NewOutfit = (props) => {
+const NewOutfit = ({ handleAddOutfit }, props) => {
   const [formData, setFormData ] = useState({
     description: '',
-    photo: '',
+    photo: ''
   })
 
   const handleChange = (evt) => {
@@ -16,7 +19,7 @@ const NewOutfit = (props) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-		props.handleAddOutfit(formData)
+		handleAddOutfit(formData)
   }
 
   return (
@@ -25,7 +28,7 @@ const NewOutfit = (props) => {
         <h2>Image Upload</h2>
         <input type="file" />
         <input
-          type="string"
+          type="textarea"
           name="description"
           id="title-input"
           value={formData.description}

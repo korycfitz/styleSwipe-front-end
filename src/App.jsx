@@ -99,7 +99,7 @@ function App() {
         <Route
           path='/outfits/:outfitId' element={<ShowOutfit outfits={outfits} user={user}/>}/>
         <Route 
-          path='/outfits/new' element={< NewOutfit handleAddOutfit={handleAddOutfit}/>}/>
+          path='/outfits/new' element={< NewOutfit handleAddOutfit={handleAddOutfit} HandleUploadPhoto={HandleUploadPhoto}/>}/>
         <Route 
           path='/users/:userId' element={< UserPage />}/>
         <Route 
