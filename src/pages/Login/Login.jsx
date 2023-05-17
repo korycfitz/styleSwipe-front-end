@@ -1,9 +1,6 @@
 // npm modules
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-
-//components
-import SignupRedirect from '../../components/SignupRedirect/SignupRedirect'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 // services
 import * as authService from '../../services/authService'
@@ -76,7 +73,7 @@ const LoginPage = ({ handleAuthEvt }) => {
           </button>
         </div>
       </form>
-      <SignupRedirect />
+      <NavLink to="http://localhost:5173/auth/login">Already have an Account?</NavLink>
     </main>
   )
 }
