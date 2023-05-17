@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import * as authService from '../../services/authService'
 import styles from './Login.module.css'
 
@@ -72,11 +72,12 @@ const LoginPage = ({ handleAuthEvt }) => {
               Log In
             </button>
           </div>
+          <br></br>
+          <Link to="/auth/signup" className={styles.link}>
+            Don't have an Account?
+          </Link>
         </form>
       </div>
-      <Link to="/auth/signup" className={styles.link}>
-        Don't have an Account?
-      </Link>
     </main>
   )
 }
