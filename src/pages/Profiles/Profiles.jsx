@@ -32,6 +32,7 @@ const Profiles = () => {
           </div>
         ))}
       </div>
+      
     </main>
   )
 }

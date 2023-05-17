@@ -9,14 +9,13 @@ import * as profileService from '../../services/profileService'
 const ShowOutfit = (props) => {
   return (
     <>
-      {props.outfits.map((outfit) => (
+      {props.outfits.map((outfit, idx) => (
         <div>
           <>
             {/* ADD KEY HERE */}
-            {console.log(outfit)}
           <h1>{outfit.author.name}</h1>
+          <img src={outfit.author.photo} alt={outfit.author.name} />
           <h2>{outfit.description}</h2>
-          <h2>{outfit.author.photo}</h2>
         </>
         </div>
       ))}
