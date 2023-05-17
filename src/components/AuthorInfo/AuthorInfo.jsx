@@ -8,8 +8,8 @@ const AuthorInfo = ({outfit}) => {
 
   return (
     <div className={styles.container}>
-      <h2>{outfit.author.name}</h2>
-      <DateCard outfit={outfit}/>
+      {/* <h2>{outfit.author.name}</h2> */}
+      {/* <DateCard outfit={outfit}/> */}
     </div>
   )
 }

@@ -2,11 +2,12 @@
 import styles from './Comments.module.css'
 //components
 import CommentCard from "../CommentCard/CommentCard";
-const Comments = ({outfit}) => {
+const Comments = (props) => {
   return (
     <div className={styles.container}>
-      {console.log(outfit)}
-      <CommentCard outfit={outfit}/>
+      {props.outfit.comments.map((comment) => (
+        <CommentCard key={comment._id} comment={comment} />
+      ))}
     </div>
   )
 }
