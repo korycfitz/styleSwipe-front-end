@@ -45,7 +45,7 @@ function App() {
       setOutfits(data)
     }
     if (user) fetchAllOutfits()
-  }, [user])
+  }, [user, outfits])
   
 
 
