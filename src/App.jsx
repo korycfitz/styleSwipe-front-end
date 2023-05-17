@@ -102,11 +102,9 @@ function App() {
         <Route 
           path='/profiles/:userId' element={< UserPage />}/>
         <Route 
-          path='/users' element={< UserIndex />}/>
+          path='/profiles' element={< UserIndex />}/>
         <Route 
           path='/profiles/:userId/swipes' element={< UserSwipes />}/>
-        <Route 
-          path='/profiles/:userId/outfits' element={< UserOutfits />}/>
         <Route 
           path='/profiles/:userId/outfits' element={< UserOutfits />}/>
         <Route 
