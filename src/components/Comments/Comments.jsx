@@ -2,10 +2,10 @@
 import styles from './Comments.module.css'
 //components
 import CommentCard from "../CommentCard/CommentCard";
-const Comments = () => {
+const Comments = ({outfit}) => {
   return (
     <div className={styles.container}>
-      <CommentCard />
+      <CommentCard outfit={outfit}/>
     </div>
   )
 }
