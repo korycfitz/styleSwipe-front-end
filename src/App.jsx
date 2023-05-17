@@ -89,7 +89,9 @@ function App() {
         <Route
           path='/auth/logout' element={<Logout />}/>
         <Route
-          path='/outfits/:outfitId' element={<ShowOutfit outfits={outfits} user={user}/>}/>
+          path='/outfits' element={<Outfit outfits={outfits} user={user}/>}/>
+        <Route
+          path='/outfits' element={<ShowOutfit outfits={outfits} user={user}/>}/>
         <Route 
           path='/outfits/new' element={< NewOutfit />}/>
         <Route 

@@ -11,9 +11,10 @@ import OutfitInfo from '../OutfitDesc/OutfitDesc'
 const OutfitCard = (props) => {
   return (
     <>
-      {/* <h1>TEST</h1> */}
-      {/* <OutfitPreview />
-      <OutfitInfo /> */}
+      <h1>{props.outfit._id}</h1>
+      <h1>{props.outfit.description}</h1>
+      <OutfitPreview />
+      <OutfitInfo />
 
     </>
   )
