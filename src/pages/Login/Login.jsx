@@ -2,6 +2,9 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+//components
+import SignupRedirect from '../../components/SignupRedirect/SignupRedirect'
+
 // services
 import * as authService from '../../services/authService'
 
@@ -73,6 +76,7 @@ const LoginPage = ({ handleAuthEvt }) => {
           </button>
         </div>
       </form>
+      <SignupRedirect />
     </main>
   )
 }
