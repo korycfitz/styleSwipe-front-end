@@ -9,7 +9,7 @@ const ShowOutfit = (props) => {
       {props.outfits.map((outfit, idx) => (
         <>
           <Outfit key={idx} outfit={outfit}/>
-          <Comments key={idx} outfit={outfit}/>
+          {/* <Comments key={idx} outfit={outfit}/> */}
 
         </>
       ))}
