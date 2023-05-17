@@ -6,7 +6,7 @@ import OutfitPreview from '../OutfitPreview/OutfitPreview'
 import OutfitDesc from '../OutfitDesc/OutfitDesc'
 
 // css
-// import styles from './OutfitCard.module.css'
+import styles from './OutfitCard.module.css'
 
 const OutfitCard = ({outfit}) => {
   const [displayOutfitDesc, setDisplayOutfitDesc] = useState(false)
@@ -16,7 +16,7 @@ const OutfitCard = ({outfit}) => {
   }
 
   return ( 
-    <div>
+    <div className={styles.container}>
       {!displayOutfitDesc &&
       <>
         <h3>OUTFIT CARD</h3>

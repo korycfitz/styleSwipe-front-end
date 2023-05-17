@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outfitPost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 423px;
+}

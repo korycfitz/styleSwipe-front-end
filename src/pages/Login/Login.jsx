@@ -2,6 +2,9 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+//components
+import SignupRedirect from '../../components/SignupRedirect/SignupRedirect'
+
 // services
 import * as authService from '../../services/authService'
 
@@ -30,7 +33,7 @@ const LoginPage = ({ handleAuthEvt }) => {
       }
       await authService.login(formData)
       handleAuthEvt()
-      navigate(`/outfits`) // <-- will re-drect to random :outfitId page. Props will allow ID to go inside params.
+      navigate(`/outfits/:outfitId`) // <-- will re-drect to random :outfitId page. Props will allow ID to go inside params.
     } catch (err) {
       console.log(err)
       setMessage(err.message)
@@ -73,6 +76,7 @@ const LoginPage = ({ handleAuthEvt }) => {
           </button>
         </div>
       </form>
+      <SignupRedirect />
     </main>
   )
 }

@@ -7,11 +7,11 @@ const ShowOutfit = (props) => {
   return (
     <>
       {props.outfits.map((outfit, idx) => (
-        <>
+        <div className="outfit">
           <Outfit key={idx} outfit={outfit}/>
-          <Comments key={idx} outfit={outfit}/>
+          {/* <Comments key={idx} outfit={outfit}/> */}
 
-        </>
+        </div>
       ))}
     </>  
   )

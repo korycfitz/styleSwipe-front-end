@@ -1,4 +1,3 @@
-
 // css
 import styles from './OutfitDesc.module.css'
 
