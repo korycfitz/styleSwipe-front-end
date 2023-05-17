@@ -10,9 +10,7 @@ const SignupRedirect = () => {
     
     <div className={styles.container}>
 
-      {
       <NavLink to="http://localhost:5173/auth/signup">Don't have an Account?</NavLink>
-      }
       
       {/* {!displayOutfitDesc &&
       <>
