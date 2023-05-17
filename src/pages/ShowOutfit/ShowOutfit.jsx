@@ -6,8 +6,11 @@ import NewComment from "../../components/NewComment/NewComment"
 const ShowOutfit = (props) => {
   return (
     <>
-      {props.outfits.map((outfit)=> (
-        console.log(outfit.author.name)
+      {props.outfits.map((outfit) => (
+        <div>
+          {/* ADD KEY HERE */}
+        <h1>{outfit.author.name}</h1>
+        </div>
       ))}
     </>
   )

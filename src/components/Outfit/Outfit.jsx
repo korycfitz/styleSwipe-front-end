@@ -14,22 +14,12 @@ import OutfitIcons from '../OutfitIcons/OutfitIcons'
 import Swipe from '../Swipe/Swipe'
 
 const Outfit = (props) => {
-  const { outfitId } = useParams()
-  const [outfit, setOutfit] = useState(null)
 
-  useEffect(() => {
-    const fetchOutfit = async () => {
-      const data = await outfitService.show(outfitId)
-      console.log('OUTFITDESC: ', props.user)
-      setOutfit(data)
-    }
-    fetchOutfit()
-  }, [outfitId])
   return (
     <main>
       <div className={styles.container}>
         <h1>HI</h1>
-          <OutfitCard outfit={outfit} user={props.user}/>
+          <OutfitCard outfit={props.outfit} user={props.user}/>
           <OutfitIcons />
           <AuthorInfo />
           <OutfitCard />
