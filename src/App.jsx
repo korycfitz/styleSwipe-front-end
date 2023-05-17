@@ -1,7 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-
 // pages
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import EditOutfit from './pages/EditOutfit/EditOutfit'
@@ -28,11 +27,12 @@ import * as outfitService from './services/outfitService'
 
 // styles
 import './App.css'
-
 function App() {
   const [outfits, setOutfits] = useState([])
   const [user, setUser] = useState(authService.getUser())
-  const [message, setMessage] = useState('')
+  const [formData, setFormData] = useState({
+    photo: ''
+  })
 
 
   const navigate = useNavigate()
@@ -49,12 +49,11 @@ function App() {
   const handleAddOutfit = async (outfitFormData) => {
     const newOutfit = await outfitService.create(outfitFormData)
     setOutfits([newOutfit, ...outfits])
-    navigate('/outfits/:outfitId')
+    navigate(`/outfits/${newOutfit.outfitId}`)
   }
 
-  const HandleUploadPhoto = evt => {
-    setMessage('')
-    setFormData({ ...outfitFormData, [evt.target.name]: evt.target.value })
+  const handleUploadPhoto = (evt) => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
   const handleLogout = () => {
@@ -99,7 +98,7 @@ function App() {
         <Route
           path='/outfits/:outfitId' element={<ShowOutfit outfits={outfits} user={user}/>}/>
         <Route 
-          path='/outfits/new' element={< NewOutfit handleAddOutfit={handleAddOutfit} HandleUploadPhoto={HandleUploadPhoto}/>}/>
+          path='/outfits/new' element={< NewOutfit handleAddOutfit={handleAddOutfit} handleUploadPhoto={handleUploadPhoto}/>}/>
         <Route 
           path='/profiles/:userId' element={< UserPage />}/>
         <Route 
@@ -119,3 +118,7 @@ function App() {
 }
 
 export default App
+
+
+
+
