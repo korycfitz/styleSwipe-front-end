@@ -1,15 +1,12 @@
-// components
-
-
 // css
 import styles from './DateCard.module.css'
 
-const DateCard = () => {
-
+const DateCard = (props) => {
+  const date = new Date(props.outfit.createdAt).toLocaleDateString()
   return (
     <div className={styles.container}>
-      {/* <Icon category="Calendar" /> */}
-      <h4>DATE: </h4>
+
+      <h5>DATE: {date}</h5>
     </div>
   )
 }

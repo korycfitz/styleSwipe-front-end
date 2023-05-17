@@ -3,7 +3,7 @@
 
 // components
 import OutfitPreview from '../OutfitPreview/OutfitPreview'
-import OutfitInfo from '../OutfitDesc/OutfitDesc'
+import OutfitDesc from '../OutfitDesc/OutfitDesc'
 
 // css
 // import styles from './OutfitCard.module.css'
@@ -11,9 +11,10 @@ import OutfitInfo from '../OutfitDesc/OutfitDesc'
 const OutfitCard = ({outfit}) => {
   return (
     <>
-      <h3>OUTFIT CARD</h3>
+    <h3>OUTFIT CARD</h3>
+      <h2>{outfit.author.name}</h2>
       <OutfitPreview outfit={outfit}/>
-      <OutfitInfo outfit={outfit}/>
+      <OutfitDesc outfit={outfit}/>
 
     </>
   )
