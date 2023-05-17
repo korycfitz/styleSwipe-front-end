@@ -115,21 +115,21 @@ const Signup = ({ handleAuthEvt }) => {
         </label>
         <label className={styles.label}>
           Upload Photo
-          <input 
+          <input
             type="file" 
             name="photo" 
             onChange={handleChangePhoto}
             ref={imgInputRef}
           />
         </label>
-        <div>
-          <Link to="/">Cancel</Link>
+        <div className={styles.cancelLink}>
           <button
             className={styles.button}
             disabled={ isFormInvalid() || isSubmitted }
           >
             {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
           </button>
+          <Link to="/">Cancel</Link>
               
     <div className={styles.loginRedirect}>
       <NavLink to="http://localhost:5173/auth/login">Already have an Account?</NavLink>
