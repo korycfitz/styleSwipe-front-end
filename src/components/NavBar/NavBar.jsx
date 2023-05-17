@@ -3,7 +3,7 @@ import styles from "./NavBar.module.css"
 
 const NavBar = ({ user, handleLogout }) => {
   const handleLogoClick = () => {
-    window.location.href = "/" 
+    window.location.href = "/outfits/:outfitId" 
   }
 
   return (

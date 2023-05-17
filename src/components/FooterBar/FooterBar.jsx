@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import styles from "./FooterBar.module.css"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faHome, faPlus, faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome, faPlus, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const FooterBar = ({ user }) => {
   return (
@@ -10,13 +10,13 @@ const FooterBar = ({ user }) => {
         {user && (
           <>
             <NavLink to="/outfits/:outfitId" className={styles.button}>
-              {/* <FontAwesomeIcon icon={faHome} /> */}
+              {<FontAwesomeIcon icon={faHome} /> }
             </NavLink>
             <NavLink to="/outfits/new" className={styles.button}>
-              {/* <FontAwesomeIcon icon={faPlus} /> */}
+              {<FontAwesomeIcon icon={faPlus} /> }
             </NavLink>
             <NavLink to="/users/:userId" className={styles.button}>
-              {/* <FontAwesomeIcon icon={faUser} /> */}
+              {<FontAwesomeIcon icon={faUser} /> }
             </NavLink>
           </>
         )}
