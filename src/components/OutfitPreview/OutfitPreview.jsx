@@ -6,7 +6,7 @@ const OutfitPreview = (props) => {
     <div className={styles.container}>
       <section>
         <h5>change &lt;img&gt; src value to correct props:</h5>
-      <img src={props.outfit.author.photo} alt="The user's avatar" />
+      <img className={styles.outfitPost} src={props.outfit.photo} alt="The user's outfit" />
       </section>
     </div>
   )
