@@ -3,13 +3,12 @@ import Outfit from "../../components/Outfit/Outfit"
 import Comments from "../../components/Comments/Comments"
 import NewComment from "../../components/NewComment/NewComment"
 
-const ShowOutfit = () => {
+const ShowOutfit = (props) => {
   return (
     <>
-    <h1>TEST</h1>
-      {/* <Outfit /> */}
-      <Comments />
-      <NewComment />
+      {props.outfits.map((outfit)=> (
+        console.log(outfit.author.name)
+      ))}
     </>
   )
 }

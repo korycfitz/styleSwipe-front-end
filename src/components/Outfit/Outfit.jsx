@@ -1,3 +1,7 @@
+// modules
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+
 // css
 import styles from './Outfit.module.css'
 
@@ -10,12 +14,22 @@ import OutfitIcons from '../OutfitIcons/OutfitIcons'
 import Swipe from '../Swipe/Swipe'
 
 const Outfit = (props) => {
+  const { outfitId } = useParams()
+  const [outfit, setOutfit] = useState(null)
+
+  useEffect(() => {
+    const fetchOutfit = async () => {
+      const data = await outfitService.show(outfitId)
+      console.log('OUTFITDESC: ', props.user)
+      setOutfit(data)
+    }
+    fetchOutfit()
+  }, [outfitId])
   return (
     <main>
       <div className={styles.container}>
-        {props.outfits.map((outfit, idx) => (
-          <OutfitCard key={idx} outfit={outfit} user={props.user}/>
-          ))}
+        <h1>HI</h1>
+          <OutfitCard outfit={outfit} user={props.user}/>
           <OutfitIcons />
           <AuthorInfo />
           <OutfitCard />
