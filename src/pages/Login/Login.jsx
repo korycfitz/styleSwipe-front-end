@@ -73,7 +73,7 @@ const LoginPage = ({ handleAuthEvt }) => {
           </button>
         </div>
       </form>
-      <NavLink to="http://localhost:5173/auth/signup">Already have an Account?</NavLink>
+      <NavLink to="/auth/signup">Already have an Account?</NavLink>
     </main>
   )
 }
