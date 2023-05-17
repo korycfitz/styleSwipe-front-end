@@ -21,7 +21,6 @@ import UserSwipes from './pages/UserSwipes/UserSwipes'
 import NavBar from './components/NavBar/NavBar'
 import FooterBar from './components/FooterBar/FooterBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-// import OutfitCard from './components/OutfitCard/OutfitCard'
 
 // services
 import * as authService from './services/authService'
@@ -33,6 +32,8 @@ import './App.css'
 function App() {
   const [outfits, setOutfits] = useState([])
   const [user, setUser] = useState(authService.getUser())
+  const [message, setMessage] = useState('')
+
 
   const navigate = useNavigate()
 
@@ -45,7 +46,16 @@ function App() {
     if (user) fetchAllOutfits()
   }, [user])
   
+  const handleAddOutfit = async (outfitFormData) => {
+    const newOutfit = await outfitService.create(outfitFormData)
+    setOutfits([newOutfit, ...outfits])
+    navigate('/outfits/:outfitId')
+  }
 
+  const HandleUploadPhoto = evt => {
+    setMessage('')
+    setFormData({ ...outfitFormData, [evt.target.name]: evt.target.value })
+  }
 
   const handleLogout = () => {
     authService.logout()
@@ -89,7 +99,7 @@ function App() {
         <Route
           path='/outfits/:outfitId' element={<ShowOutfit outfits={outfits} user={user}/>}/>
         <Route 
-          path='/outfits/new' element={< NewOutfit />}/>
+          path='/outfits/new' element={< NewOutfit handleAddOutfit={handleAddOutfit}/>}/>
         <Route 
           path='/users/:userId' element={< UserPage />}/>
         <Route 
