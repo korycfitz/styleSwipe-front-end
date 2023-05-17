@@ -101,17 +101,17 @@ function App() {
         <Route 
           path='/outfits/new' element={< NewOutfit handleAddOutfit={handleAddOutfit} HandleUploadPhoto={HandleUploadPhoto}/>}/>
         <Route 
-          path='/users/:userId' element={< UserPage />}/>
+          path='/profiles/:userId' element={< UserPage />}/>
         <Route 
           path='/users' element={< UserIndex />}/>
         <Route 
-          path='/users/:userId' element={< UserSwipes />}/>
+          path='/profiles/:userId/swipes' element={< UserSwipes />}/>
         <Route 
-          path='/users/:userId/outfits' element={< UserOutfits />}/>
+          path='/profiles/:userId/outfits' element={< UserOutfits />}/>
         <Route 
-          path='/users/:userId/outfits' element={< UserOutfits />}/>
+          path='/profiles/:userId/outfits' element={< UserOutfits />}/>
         <Route 
-          path='/users/:userId/outfits/edit' element={< EditOutfit />}/>
+          path='/profiles/:userId/outfits/edit' element={< EditOutfit />}/>
       </Routes>
       <FooterBar user={user} />
     </>

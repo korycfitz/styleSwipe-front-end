@@ -29,11 +29,6 @@ const NavBar = ({ user, handleLogout }) => {
               </div>
               <ul className={styles.profileOptions}>
                 <li>
-                  <NavLink to="/profiles" activeClassName={styles.active}>
-                    Profiles
-                  </NavLink>
-                </li>
-                <li>
                   <NavLink
                     to="/auth/change-password"
                     activeClassName={styles.active}
