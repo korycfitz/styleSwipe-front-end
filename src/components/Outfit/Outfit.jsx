@@ -18,8 +18,9 @@ const Outfit = ({outfit}) => {
   return (
     <main>
       <div className={styles.container}>
-        <h1>HI</h1>
-          <OutfitCard outfit={outfit}/>
+        <h1>Outfit Post</h1>
+        {/* THIS WORKS */}
+          <OutfitCard outfit={outfit}/> 
           {/* // <OutfitIcons />
           // <AuthorInfo />
           // <OutfitCard />

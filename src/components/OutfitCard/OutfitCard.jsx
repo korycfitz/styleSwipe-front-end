@@ -11,9 +11,9 @@ import OutfitInfo from '../OutfitDesc/OutfitDesc'
 const OutfitCard = ({outfit}) => {
   return (
     <>
-      <h1>TEST</h1>
+      <h3>OUTFIT CARD</h3>
       <OutfitPreview outfit={outfit}/>
-      {/* <OutfitInfo /> */}
+      <OutfitInfo outfit={outfit}/>
 
     </>
   )
