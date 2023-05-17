@@ -5,9 +5,9 @@ import CommentCard from "../CommentCard/CommentCard";
 const Comments = (props) => {
   return (
     <div className={styles.container}>
-      {props.outfit.comments.map((comment) => (
+      {/* {props.outfit.comments.map((comment) => (
         <CommentCard key={comment._id} comment={comment} />
-      ))}
+      ))} */}
     </div>
   )
 }
