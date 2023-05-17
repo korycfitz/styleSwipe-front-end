@@ -6,17 +6,17 @@ const UserPage = () => {
     <div className={styles.container}>
       <div className={styles.buttonContainer}>
         <div className={styles.buttonBox}>
-          <Link to="/" className={styles.button}>
+          <Link to="/profiles" className={styles.button}>
             All Users
           </Link>
         </div>
         <div className={styles.buttonBox}>
-          <Link to="/" className={styles.button}>
+          <Link to="/profiles/:userId/swipes" className={styles.button}>
             Swipes
           </Link>
         </div>
         <div className={styles.buttonBox}>
-          <Link to="/" className={styles.button}>
+          <Link to="/profiles/:userId/outfits" className={styles.button}>
             My Outfits
           </Link>
         </div>

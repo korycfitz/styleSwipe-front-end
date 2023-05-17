@@ -15,7 +15,7 @@ const FooterBar = ({ user }) => {
             <NavLink to="/outfits/new" className={styles.button}>
               {<FontAwesomeIcon icon={faPlus} /> }
             </NavLink>
-            <NavLink to="/users/:userId" className={styles.button}>
+            <NavLink to="/profiles/:userId" className={styles.button}>
               {<FontAwesomeIcon icon={faUser} /> }
             </NavLink>
           </>
