@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useRef } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 // services
 import * as authService from '../../services/authService'
@@ -142,11 +142,10 @@ const Signup = ({ handleAuthEvt }) => {
           >
             {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
           </button>
-            <Link to="/">Cancel</Link>
-            <div className={styles.loginRedirect}>
+          </div>
+          <div className={styles.loginRedirect}>
             <NavLink to="/auth/login">Already have an Account?</NavLink>
           </div>
-        </div>
       </form>
     </body>
   )
