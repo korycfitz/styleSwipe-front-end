@@ -65,7 +65,7 @@ const Signup = ({ handleAuthEvt }) => {
       handleAuthEvt()
       //this is the correct navigation, but we need to pick a random outfit to navigate to, and navigate to a specific location if no outfits exist, that the user has not swiped on
       // navigate(`/outfits/${outfitId}`)
-      navigate(`/outfits/6464ddb3b1cb7ba415749d1e`) //this is hard coded in
+      navigate(`/outfits/6464de07b1cb7ba415749d26`) //this is hard coded in
     } catch (err) {
       console.log(err)
       setMessage(err.message)
@@ -128,27 +128,27 @@ const Signup = ({ handleAuthEvt }) => {
             ref={imgInputRef}
           />
         </label>
-        <div className={styles.buttonGroup}>
-            <button
-              className={`${styles.button} ${styles.cancel}`}
-              type="button"
-              onClick={handleCancel}
-            >
-              Cancel
-            </button>
+          <div className={styles.buttonGroup}>
+           <button
+             className={`${styles.button} ${styles.cancel}`}
+             type="button"
+             onClick={handleCancel}
+           >
+             Cancel
+           </button>
           <button
             className={styles.button}
             disabled={isFormInvalid() || isSubmitted}
           >
             {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
           </button>
+            <Link to="/">Cancel</Link>
+            <div className={styles.loginRedirect}>
+            <NavLink to="/auth/login">Already have an Account?</NavLink>
+          </div>
         </div>
       </form>
-      <div className={styles.loginRedirect}>
-        <NavLink to="http://localhost:5173/auth/login">Already have an Account?</NavLink>
-      </div>
     </body>
-
   )
 }
 
