@@ -1,5 +1,5 @@
 // components
-
+// import Icon from '../../components/Icon/Icon'
 
 // css
 import styles from './DateCard.module.css'
@@ -9,7 +9,7 @@ const DateCard = ({ createdAt }) => {
   return (
     <div className={styles.container}>
       {/* <Icon category="Calendar" /> */}
-      <h4>DATE: {date}</h4>
+      <h4>{date}</h4>
     </div>
   )
 }
