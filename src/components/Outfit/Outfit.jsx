@@ -15,14 +15,14 @@ const Outfit = (props) => {
       <div className={styles.container}>
         {props.outfits.map((outfit, idx) => (
           <OutfitCard key={idx} outfit={outfit} user={props.user}/>
-        ))}
-        <OutfitIcons />
-        <AuthorInfo />
-        <OutfitCard />
-        <Outfit />
-        <Comments />
-        <NewComment />
-        <Swipe />
+          ))}
+          <OutfitIcons />
+          <AuthorInfo />
+          <OutfitCard />
+          <Outfit />
+          <Comments />
+          <NewComment />
+          <Swipe />
       </div>
     </main>
   )

@@ -6,7 +6,8 @@ import NewComment from "../../components/NewComment/NewComment"
 const ShowOutfit = () => {
   return (
     <>
-      <Outfit />
+    <h1>TEST</h1>
+      {/* <Outfit /> */}
       <Comments />
       <NewComment />
     </>
