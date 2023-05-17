@@ -1,6 +1,6 @@
 
 
-// css
+// css 
 import styles from './Outfit.module.css'
 
 //components
