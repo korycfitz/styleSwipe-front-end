@@ -25,7 +25,7 @@ const NavBar = ({ user, handleLogout }) => {
           <li>
             <div className={styles.profileMenu}>
               <div className={styles.profileImage}>
-                <img src="profile.png" alt="Profile" />
+                <img src={user.profilePicture} alt="Profile" />
               </div>
               <ul className={styles.profileOptions}>
                 <li>
