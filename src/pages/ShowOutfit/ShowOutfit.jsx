@@ -13,9 +13,10 @@ const ShowOutfit = (props) => {
         <div>
           <>
             {/* ADD KEY HERE */}
-          <h1>{outfit.author.name}</h1>
+          {/* <h1>{outfit.author.name}</h1>
           <img src={outfit.author.photo} alt={outfit.author.name} />
-          <h2>{outfit.description}</h2>
+          <h2>{outfit.description}</h2> */}
+          <Outfit outfit={outfit}/>
         </>
         </div>
       ))}

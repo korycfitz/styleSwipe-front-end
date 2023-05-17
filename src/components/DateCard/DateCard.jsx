@@ -4,12 +4,12 @@
 // css
 import styles from './DateCard.module.css'
 
-const DateCard = ({ createdAt }) => {
-  const date = new Date(createdAt).toLocaleDateString()
+const DateCard = () => {
+
   return (
     <div className={styles.container}>
       {/* <Icon category="Calendar" /> */}
-      <h4>DATE: {date}</h4>
+      <h4>DATE: </h4>
     </div>
   )
 }

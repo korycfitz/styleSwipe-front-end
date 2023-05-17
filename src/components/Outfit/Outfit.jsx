@@ -13,20 +13,20 @@ import AuthorInfo from '../AuthorInfo/AuthorInfo'
 import OutfitIcons from '../OutfitIcons/OutfitIcons'
 import Swipe from '../Swipe/Swipe'
 
-const Outfit = (props) => {
+const Outfit = ({outfit}) => {
 
   return (
     <main>
       <div className={styles.container}>
         <h1>HI</h1>
-          <OutfitCard outfit={props.outfit} user={props.user}/>
-          <OutfitIcons />
-          <AuthorInfo />
-          <OutfitCard />
-          <Outfit />
-          <Comments />
-          <NewComment />
-          <Swipe />
+          <OutfitCard outfit={outfit}/>
+          {/* // <OutfitIcons />
+          // <AuthorInfo />
+          // <OutfitCard />
+          // <Outfit />
+          // <Comments />
+          // <NewComment />
+          // <Swipe />*/}
       </div>
     </main>
   )

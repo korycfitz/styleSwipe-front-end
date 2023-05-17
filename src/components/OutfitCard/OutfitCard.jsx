@@ -8,12 +8,12 @@ import OutfitInfo from '../OutfitDesc/OutfitDesc'
 // css
 // import styles from './OutfitCard.module.css'
 
-const OutfitCard = (props) => {
+const OutfitCard = ({outfit}) => {
   return (
     <>
-      {/* <h1>TEST</h1> */}
-      {/* <OutfitPreview />
-      <OutfitInfo /> */}
+      <h1>TEST</h1>
+      <OutfitPreview outfit={outfit}/>
+      {/* <OutfitInfo /> */}
 
     </>
   )
