@@ -1,9 +1,9 @@
 import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
-const CommentCard = ({comment}) => {
+const CommentCard = (props) => {
   return (
     <>
-      <AuthorInfo comment={comment}/>
+      <AuthorInfo comment={props}/>
     </>
   )
 }
