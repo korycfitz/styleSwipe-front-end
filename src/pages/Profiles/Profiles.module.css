@@ -14,6 +14,11 @@
   padding: 10px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.profileBox:hover {
+  background-color: #e6e6e6;
 }
 
 .profileImage {
@@ -22,6 +27,11 @@
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profileBox:hover .profileImage {
+  transform: scale(1.2);
 }
 
 .profileName {
