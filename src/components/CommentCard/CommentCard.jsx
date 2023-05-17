@@ -1,8 +1,10 @@
 import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
-const CommentCard = ({outfit}) => {
+const CommentCard = ({comment}) => {
   return (
-    <AuthorInfo outfit={outfit}/>
+    <>
+      <AuthorInfo comment={comment}/>
+    </>
   )
 }
 
