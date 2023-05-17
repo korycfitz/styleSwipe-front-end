@@ -10,17 +10,13 @@ const ShowOutfit = (props) => {
   return (
     <>
       {props.outfits.map((outfit, idx) => (
-        <div>
-          <>
-            {/* ADD KEY HERE */}
-          {/* <h1>{outfit.author.name}</h1>
-          <img src={outfit.author.photo} alt={outfit.author.name} />
-          <h2>{outfit.description}</h2> */}
-          <Outfit outfit={outfit}/>
+        <>
+          <Outfit key={idx} outfit={outfit}/>
+          {/* <Comments key={idx} outfit={outfit}/> */}
+
         </>
-        </div>
       ))}
-    </>
+    </>  
   )
 }
 
