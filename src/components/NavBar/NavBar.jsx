@@ -1,27 +1,27 @@
-import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
-import * as profileService from "../../services/profileService";
-import styles from "./NavBar.module.css";
-import logo from "../../assets/styleswipe_logo.png";
-import fake from "../../assets/no_userprofile_picture.png";
+import { NavLink } from "react-router-dom"
+import { useState, useEffect } from "react"
+import * as profileService from "../../services/profileService"
+import styles from "./NavBar.module.css"
+import logo from "../../assets/styleswipe_logo.png"
+import fake from "../../assets/no_userprofile_picture.png"
 
 const NavBar = ({ user, handleLogout }) => {
-  const [profile, setProfile] = useState(null);
+  const [profile, setProfile] = useState(null)
 
   const fetchProfile = async () => {
     if (user && user.profileId) {
-      const fetchedProfile = await profileService.getProfile(user.profileId);
-      setProfile(fetchedProfile);
+      const fetchedProfile = await profileService.getProfile(user.profileId)
+      setProfile(fetchedProfile)
     }
-  };
+  }
 
   useEffect(() => {
-    fetchProfile();
-  }, [user]);
+    fetchProfile()
+  }, [user])
 
   const handleLogoClick = () => {
-    window.location.href = "/outfits/:outfitId";
-  };
+    window.location.href = "/outfits/:outfitId"
+  }
 
   return (
     <nav className={styles.nav}>
@@ -75,7 +75,7 @@ const NavBar = ({ user, handleLogout }) => {
         )}
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
