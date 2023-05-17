@@ -7,6 +7,7 @@ const NewOutfit = () => {
 
   const [photo, setPhoto] = useState('')
   const [description, setDescription] = useState('')
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleChangePhoto = (e) => {
     const file = e.target.files[0]
@@ -24,10 +25,14 @@ const NewOutfit = () => {
       formData.append('photo', photo)
       formData.append('description', description)
 
+      setIsSubmitted(true)
+
       const response = await fetch('/api/outfits', {
         method: 'POST',
         body: formData,
       })
+
+      setIsSubmitted(false)
 
       if (response.ok) {
         navigate('/')
@@ -64,10 +69,17 @@ const NewOutfit = () => {
             required
           />
         </div>
-        <button type="submit">Create</button>
+        <div>
+          <button type="submit" disabled={isSubmitted}>
+            {!isSubmitted ? 'Create' : '🚀 Sending...'}
+          </button>
+        </div>
       </form>
     </div>
   )
 }
 
 export default NewOutfit
+
+
+
