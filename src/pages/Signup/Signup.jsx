@@ -129,13 +129,13 @@ const Signup = ({ handleAuthEvt }) => {
           />
         </label>
           <div className={styles.buttonGroup}>
-           <button
-             className={`${styles.button} ${styles.cancel}`}
-             type="button"
-             onClick={handleCancel}
-           >
-             Cancel
-           </button>
+          <button
+            className={`${styles.button} ${styles.cancel}`}
+            type="button"
+            onClick={handleCancel}
+          >
+            Cancel
+          </button>
           <button
             className={styles.button}
             disabled={isFormInvalid() || isSubmitted}
