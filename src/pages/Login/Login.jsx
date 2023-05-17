@@ -1,11 +1,6 @@
-// npm modules
 import { useState } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
-
-// services
+import { Link, useNavigate } from 'react-router-dom'
 import * as authService from '../../services/authService'
-
-// css
 import styles from './Login.module.css'
 
 const LoginPage = ({ handleAuthEvt }) => {
@@ -17,12 +12,12 @@ const LoginPage = ({ handleAuthEvt }) => {
     password: '',
   })
 
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     setMessage('')
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
-  const handleSubmit = async evt => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault()
     try {
       if (!import.meta.env.VITE_BACK_END_SERVER_URL) {
@@ -30,7 +25,7 @@ const LoginPage = ({ handleAuthEvt }) => {
       }
       await authService.login(formData)
       handleAuthEvt()
-      navigate(`/outfits/:outfitId`) // <-- will re-drect to random :outfitId page. Props will allow ID to go inside params.
+      navigate(`/outfits/:outfitId`)
     } catch (err) {
       console.log(err)
       setMessage(err.message)
@@ -43,37 +38,45 @@ const LoginPage = ({ handleAuthEvt }) => {
     return !(email && password)
   }
 
+  const handleCancel = () => {
+    navigate('/')
+  }
+
   return (
     <main className={styles.container}>
       <h1>Log In</h1>
-      <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Email
-          <input
-            type="text"
-            value={email}
-            name="email"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Password
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-        </label>
-        <div>
-          <Link to="/">Cancel</Link>
-          <button className={styles.button} disabled={isFormInvalid()}>
-            Log In
-          </button>
-        </div>
-      </form>
-      <NavLink to="http://localhost:5173/auth/signup">Already have an Account?</NavLink>
+      <div className={styles.box}>
+        <p className={styles.message}>{message}</p>
+        <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.inputGroup}>
+            <label className={`${styles.label} ${styles.biggerLabel}`}>
+              Email
+            </label>
+            <input type="text" value={email} name="email" onChange={handleChange} />
+          </div>
+          <div className={styles.inputGroup}>
+            <label className={`${styles.label} ${styles.biggerLabel}`}>
+              Password
+            </label>
+            <input type="password" value={password} name="password" onChange={handleChange} />
+          </div>
+          <div className={styles.buttonGroup}>
+            <button
+              className={`${styles.button} ${styles.cancel}`}
+              type="button"
+              onClick={handleCancel}
+            >
+              Cancel
+            </button>
+            <button className={styles.button} disabled={isFormInvalid()}>
+              Log In
+            </button>
+          </div>
+        </form>
+      </div>
+      <Link to="/auth/signup" className={styles.link}>
+        Don't have an Account?
+      </Link>
     </main>
   )
 }

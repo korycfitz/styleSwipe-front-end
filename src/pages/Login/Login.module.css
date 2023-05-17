@@ -1,35 +1,103 @@
-input {
-  margin-left: 16px;
-  padding: 4px 8px;
-  font-size: 16px;
-  width: 300px;
-}
-
 .container {
   display: flex;
-  align-items: center;
   flex-direction: column;
-}
-
-.message {
-  margin-top: 0;
-  height: 22px;
-  color: #dd1b16;
-  font-size: 18px;
-  font-weight: bold;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background-color: rgba(100, 99, 82, .5);
+  padding-top: 2rem;
+  box-sizing: border-box;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  justify-content: flex-start;
+  width: 500px;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #121212;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.inputGroup {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .label {
-  width: 100%;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.biggerLabel {
+  font-size: 2rem;
+}
+
+.buttonGroup {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.button {
+  margin-left: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-transform: uppercase;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 1px solid white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: green;
+  color: white;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #4a90e2;
+}
+
+.cancel {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  box-shadow: none;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.cancel:hover {
+  color: red;
+  border-color: red;
+  background-color: transparent;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.2rem;
 }
