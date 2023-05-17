@@ -1,5 +1,5 @@
 // npm modules
-// import { Link } from "react-router-dom"
+import { useState } from 'react'
 
 // components
 import OutfitPreview from '../OutfitPreview/OutfitPreview'
@@ -9,14 +9,30 @@ import OutfitDesc from '../OutfitDesc/OutfitDesc'
 // import styles from './OutfitCard.module.css'
 
 const OutfitCard = ({outfit}) => {
-  return (
-    <>
-    <h3>OUTFIT CARD</h3>
-      <h2>{outfit.author.name}</h2>
-      <OutfitPreview outfit={outfit}/>
-      <OutfitDesc outfit={outfit}/>
+  const [displayOutfitDesc, setDisplayOutfitDesc] = useState(false)
 
-    </>
+  function handleInfoClick() {
+    setDisplayOutfitDesc(!displayOutfitDesc)
+  }
+
+  return ( 
+    <div>
+      {!displayOutfitDesc &&
+      <>
+        <h3>OUTFIT CARD</h3>
+        <OutfitPreview outfit={outfit}/>
+      </>}
+      {displayOutfitDesc &&
+      <>
+        <h3>OUTFIT CARD</h3>
+        <OutfitDesc outfit={outfit}/>
+      </>}
+
+
+      <button onClick={handleInfoClick}>
+        {displayOutfitDesc ? "hide" : "show"} description
+      </button>
+    </div>
   )
 }
 
