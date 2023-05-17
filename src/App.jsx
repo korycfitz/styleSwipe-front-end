@@ -40,7 +40,6 @@ function App() {
     // detchAllOutfits will serve as index
     const fetchAllOutfits = async () => {
       const data = await outfitService.index()
-      console.log(outfits)
       setOutfits(data)
     }
     if (user) fetchAllOutfits()
