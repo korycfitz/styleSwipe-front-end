@@ -1,12 +1,16 @@
-.container > body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.logo {
+  width:max-content; 
+  height:max-content; 
+  margin-bottom: 10px;
+}
+
+.welcomeMessage {
+  color: white;
 }
