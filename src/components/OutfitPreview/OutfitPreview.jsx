@@ -2,7 +2,6 @@
 import styles from './OutfitPreview.module.css'
 
 const OutfitPreview = ({outfit}) => {
-  console.log(outfit, 'outfit')
   return (
     <div className={styles.container}>
       {/* <section>
