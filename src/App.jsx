@@ -10,10 +10,8 @@ import NewOutfit from './pages/NewOutfit/NewOutfit'
 import Profiles from './pages/Profiles/Profiles'
 import ShowOutfit from './pages/ShowOutfit/ShowOutfit'
 import Signup from './pages/Signup/Signup'
-import UserIndex from './pages/UserIndex/UserIndex'
 import UserOutfits from './pages/UserOutfits/UserOutfits'
 import UserPage from './pages/UserPage/UserPage'
-import UserSwipes from './pages/UserSwipes/UserSwipes'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -54,12 +52,12 @@ function App() {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
-  const handleDeleteOutfit = async (outfitId) => {
-    // const deletedOutfit = await outfitService.delete(outfitId)
-    // setOutfits(outfits.filter((outfit) => outfit._id !== deletedOutfit._id))
-    // navigate('/outfits')
-    console.log("rafi is lit")
-  }
+  // const handleDeleteOutfit = async (outfitId) => {
+  //   // const deletedOutfit = await outfitService.delete(outfitId)
+  //   // setOutfits(outfits.filter((outfit) => outfit._id !== deletedOutfit._id))
+  //   // navigate('/outfits')
+  //   console.log("rafi is lit")
+  // }
   
 
   const handleLogout = () => {
@@ -112,10 +110,10 @@ function App() {
           }/>  
         <Route 
           path='/profiles/:userId' element={< UserPage user={user} />}/>
-        <Route 
+        {/* <Route 
           path='/profiles' element={< UserIndex />}/>
         <Route 
-          path='/profiles/:userId/swipes' element={< UserSwipes />}/>
+          path='/profiles/:userId/swipes' element={< UserSwipes />}/> */}
         <Route 
           path='/profiles/:userId/outfits' element={< UserOutfits />}/>
         <Route 
@@ -128,3 +126,4 @@ function App() {
 
 export default App
 ///test
+
