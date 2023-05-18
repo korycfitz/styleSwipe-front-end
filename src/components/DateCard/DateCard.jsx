@@ -1,14 +1,15 @@
 // css
 import styles from './DateCard.module.css'
 
-const DateCard = (props) => {
-  const date = new Date(props.outfit.createdAt).toLocaleDateString()
+const DateCard = ({ createdAt }) => {
+  const date = new Date(createdAt).toLocaleDateString()
   return (
     <div className={styles.container}>
-
-      <h5>DATE: {date}</h5>
+      <h5>{date}</h5>
     </div>
   )
 }
 
 export default DateCard
+
+// touched by Rafi 
