@@ -93,7 +93,7 @@ function App() {
             </ProtectedRoute>
           }/>
         <Route
-          path='/outfits/:outfitId' element={<ShowOutfit outfits={outfits} user={user}/>}/>
+          path='/outfits' element={<ShowOutfit outfits={outfits} user={user}/>}/>
         <Route 
           path='/outfits/new' element={< NewOutfit handleAddOutfit={handleAddOutfit} handleUploadPhoto={handleUploadPhoto}/>}/>
         <Route 

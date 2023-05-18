@@ -11,12 +11,13 @@ import AuthorInfo from '../AuthorInfo/AuthorInfo'
 // import Swipe from '../Swipe/Swipe'
 
 const Outfit = ({outfit}) => {
-
+  console.log(outfit)
   return (
     <main>
       <div className={styles.container}>
         <h1>Outfit Section</h1>
         {/* THIS WORKS */}
+        <img src={outfit.photo}/>
           <AuthorInfo outfit={outfit}/>
           <OutfitCard outfit={outfit}/> 
           {/* // <OutfitIcons />

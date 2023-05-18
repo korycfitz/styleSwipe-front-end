@@ -21,7 +21,12 @@ const OutfitCard = ({outfit}) => {
       {!displayOutfitDesc &&
       <>
         <h3>OUTFIT CARD</h3>
-        <OutfitPreview outfit={outfit}/>
+        <h2>test</h2>
+        <img
+          src={outfit.photo}
+          alt="Outfit Photo"
+        />
+        <OutfitPreview outfit={outfit}/>      
       </>}
       {displayOutfitDesc &&
       <>

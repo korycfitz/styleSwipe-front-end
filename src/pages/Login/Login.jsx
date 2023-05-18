@@ -25,7 +25,7 @@ const LoginPage = ({ handleAuthEvt }) => {
       }
       await authService.login(formData)
       handleAuthEvt()
-      navigate(`/outfits/:outfitId`)
+      navigate(`/outfits`)
     } catch (err) {
       console.log(err)
       setMessage(err.message)

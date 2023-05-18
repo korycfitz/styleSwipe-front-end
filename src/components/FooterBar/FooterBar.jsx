@@ -4,18 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faPlus, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const FooterBar = ({ user }) => {
+  let userId = user._id
+  console.log(userId)
   return (
     <footer className={styles.footer}>
       <div className={styles.buttonContainer}>
         {user && (
           <>
-            <NavLink to="/outfits/:outfitId" className={styles.button}>
+            <NavLink to="/outfits" className={styles.button}>
               {<FontAwesomeIcon icon={faHome} /> }
             </NavLink>
             <NavLink to="/outfits/new" className={styles.button}>
               {<FontAwesomeIcon icon={faPlus} /> }
             </NavLink>
-            <NavLink to="/profiles/:userId" className={styles.button}>
+            <NavLink to={`/profiles/${userId}`} className={styles.button}>
               {<FontAwesomeIcon icon={faUser} /> }
             </NavLink>
           </>
