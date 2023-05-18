@@ -20,7 +20,7 @@ const NavBar = ({ user, handleLogout }) => {
   }, [user])
 
   const handleLogoClick = () => {
-    window.location.href = "/outfits/:outfitId"
+    window.location.href = "/outfits"
   }
 
   return (
