@@ -1,9 +1,14 @@
-//css
+// npm imports
+import { useState } from "react"
+
+// css
 import styles from './NewComment.module.css'
 
+// components
+import Icon from "../Icon/Icon"
 
 const NewComment = (props) => {
-  const [formData, setFormData] = useState({ text: '' })
+  const [formData, setFormData] = useState({ content: '' })
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -12,8 +17,7 @@ const NewComment = (props) => {
   const handleSubmit = (evt) => {
     evt.preventDefault()
     props.handleAddComment(formData)
-    // last 
-    setFormData({ text: ''})
+    setFormData({ content: ''})
   }
 
   return (
@@ -21,9 +25,9 @@ const NewComment = (props) => {
       <textarea
         required
         type="text"
-        name="text"
+        name="content"
         id="text-input"
-        value={formData.text}
+        value={formData.content}
         placeholder="Add a Comment"
         onChange={handleChange}
       />
@@ -33,5 +37,3 @@ const NewComment = (props) => {
 }
  
 export default NewComment;
-
-// touched by Rafi

@@ -15,7 +15,7 @@ import * as outfitService from '../../services/outfitService'
 // css
 import styles from './OutfitDetails.module.css'
 
-const OutfitDetails = (props) => {
+const outfitDetails = (props) => {
   const { outfitId } = useParams()
   const [outfit, setOutfit] = useState(null)
 
@@ -32,14 +32,15 @@ const OutfitDetails = (props) => {
     setOutfit({ ...outfit, comments: [...outfit.comments, newComment],})
   }
 
+  console.log('outfit state:', outfit);
+  
   if (!outfit) return <Loading />
 
   return (
     <main className={styles.container}>
       <article>
         <header>
-          <h3>{outfit.category.toUpperCase()}</h3>
-          <h1>{outfit.title}</h1>
+          <h1>{outfit.description}</h1>
         </header>
         <span>
           <AuthorInfo content={outfit} />
@@ -52,7 +53,10 @@ const OutfitDetails = (props) => {
             </>
           }
         </span>
-        <p>{outfit.text}</p>
+        <span>
+          <img src={outfit.photo} alt="Image of an Outfit" />
+        </span>
+        <p>{outfit.description}</p>
       </article>
       <section>
         <h1>Comments</h1>
@@ -62,4 +66,4 @@ const OutfitDetails = (props) => {
   )
 }
  
-export default OutfitDetails
+export default outfitDetails

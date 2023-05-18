@@ -72,7 +72,7 @@ function App() {
           path='/outfits'
           element={
             <ProtectedRoute user={user}>
-              <outfitList outfits={outfits}/>
+              <OutfitList outfits={outfits}/>
             </ProtectedRoute>
           }
         />
@@ -80,7 +80,7 @@ function App() {
           path="/outfits/:outfitId"
           element={
             <ProtectedRoute user={user}>
-              <outfitDetails user={user} handleDeleteOutfit={handleDeleteOutfit}/>
+              <OutfitDetails user={user} handleDeleteOutfit={handleDeleteOutfit}/>
             </ProtectedRoute>
           }
         />
