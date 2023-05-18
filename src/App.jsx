@@ -55,6 +55,13 @@ function App() {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
+  const handleDeleteOutfit = async (outfitId) => {
+    const deletedOutfit = await outfitService.delete(outfitId)
+    setOutfits(outfits.filter((outfit) => outfit._id !== deletedOutfit._id))
+    navigate('/outfits')
+  }
+  
+
   const handleLogout = () => {
     authService.logout()
     setUser(null)
@@ -96,6 +103,7 @@ function App() {
           path='/outfits' element={<ShowOutfit outfits={outfits} user={user} />}/>
         <Route 
           path='/outfits/new' element={< NewOutfit handleAddOutfit={handleAddOutfit} handleUploadPhoto={handleUploadPhoto}/>}/>
+        <Route />  
         <Route 
           path='/profiles/:userId' element={< UserPage user={user} />}/>
         <Route 
