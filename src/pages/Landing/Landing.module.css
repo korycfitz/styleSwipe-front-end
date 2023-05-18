@@ -6,8 +6,8 @@
 }
 
 .logo {
-  width:950px; 
-  height:650px; 
+  width:1000px; 
+  height:max-content; 
+  margin-bottom: 10px;
 }
-
 

@@ -48,11 +48,11 @@ const NavBar = ({ user, handleLogout }) => {
                     to="/auth/change-password"
                     activeClassName={styles.active}
                   >
-                    Change Password
+                    <button className={styles.profileButton}>Change Password</button>
                   </NavLink>
                 </li>
                 <li>
-                  <button className={styles.logoutBtn} onClick={handleLogout}>
+                  <button className={`${styles.logoutBtn} ${styles.profileButton}`} onClick={handleLogout}>
                     Log Out
                   </button>
                 </li>
