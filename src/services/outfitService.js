@@ -90,7 +90,10 @@ async function deleteOutfit(outfitId){
 async function deleteComment(outfitId, commentId){
   try{
     const res = await fetch(`${BASE_URL}/${outfitId}/${commentId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}` }
+
     })
     return res.json()
   }catch (err) {
