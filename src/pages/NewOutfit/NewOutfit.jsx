@@ -39,7 +39,7 @@ const NewOutfit = ({ handleAddOutfit }) => {
             className={styles.descriptionInput}
           />
         </div>
-        <button type="submit" className={styles.submitButton}>SUBMIT</button>
+        <a href='/swipes' className={styles.submitButton}>SUBMIT</a>
       </form>
     </main>
   )
