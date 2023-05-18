@@ -27,5 +27,5 @@ const FooterBar = ({ user }) => {
   )
 }
 
-export default FooterBar
+export default FooterBar 
 
