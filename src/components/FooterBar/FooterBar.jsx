@@ -9,7 +9,7 @@ const FooterBar = ({ user }) => {
       <div className={styles.buttonContainer}>
         {user && (
           <>
-            <NavLink to="/outfits/:outfitId" className={styles.button}>
+            <NavLink to="/outfits" className={styles.button}>
               {<FontAwesomeIcon icon={faHome} /> }
             </NavLink>
             <NavLink to="/outfits/new" className={styles.button}>
