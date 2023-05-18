@@ -84,3 +84,7 @@
 .container > section article p {
   text-indent: 0px;
 }
+
+img {
+  max-height: 150px;
+}

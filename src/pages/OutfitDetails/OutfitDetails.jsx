@@ -31,8 +31,6 @@ const outfitDetails = (props) => {
     const newComment = await outfitService.createComment(outfitId, commentFormData)
     setOutfit({ ...outfit, comments: [...outfit.comments, newComment],})
   }
-
-  console.log('outfit state:', outfit);
   
   if (!outfit) return <Loading />
 
@@ -47,7 +45,7 @@ const outfitDetails = (props) => {
           {outfit.author._id === props.user.profile &&
             <>
               <Link to={`/outfits/${outfitId}/edit`} state={outfit}>Edit</Link>
-              <button onClick={() => props.handleDeleteoutfit(outfitId)}>
+              <button onClick={() => props.handleDeleteOutfit(outfitId)}>
                 Delete
               </button>
             </>
