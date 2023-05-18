@@ -24,3 +24,4 @@ const AuthorInfo = (props) => {
 }
 
 export default AuthorInfo
+
