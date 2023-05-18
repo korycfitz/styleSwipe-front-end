@@ -56,9 +56,10 @@ function App() {
   }
 
   const handleDeleteOutfit = async (outfitId) => {
-    const deletedOutfit = await outfitService.delete(outfitId)
-    setOutfits(outfits.filter((outfit) => outfit._id !== deletedOutfit._id))
-    navigate('/outfits')
+    // const deletedOutfit = await outfitService.delete(outfitId)
+    // setOutfits(outfits.filter((outfit) => outfit._id !== deletedOutfit._id))
+    // navigate('/outfits')
+    console.log("rafi is lit")
   }
   
 
@@ -103,7 +104,13 @@ function App() {
           path='/outfits' element={<ShowOutfit outfits={outfits} user={user} />}/>
         <Route 
           path='/outfits/new' element={< NewOutfit handleAddOutfit={handleAddOutfit} handleUploadPhoto={handleUploadPhoto}/>}/>
-        <Route />  
+        <Route
+          path='/outfits/:outfitId'
+          element={
+            <ProtectedRoute user={user}>
+              {/* <Outfit handleDeleteOutfit={handleDeleteOutfit}/> */}
+            </ProtectedRoute>
+          }/>  
         <Route 
           path='/profiles/:userId' element={< UserPage user={user} />}/>
         <Route 
