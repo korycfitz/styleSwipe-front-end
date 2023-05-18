@@ -7,6 +7,7 @@ import fake from "../../assets/no_userprofile_picture.png"
 
 const NavBar = ({ user, handleLogout }) => {
   const [profile, setProfile] = useState(null)
+  const [isProfileMenuOpen, setProfileMenuOpen] = useState(false)
 
   const fetchProfile = async () => {
     if (user && user.profileId) {
@@ -23,6 +24,14 @@ const NavBar = ({ user, handleLogout }) => {
     window.location.href = "/outfits/:outfitId"
   }
 
+  const handleProfileMenuClick = () => {
+    setProfileMenuOpen(!isProfileMenuOpen)
+  }
+
+  const handleLogoutClick = () => {
+    handleLogout()
+  }
+
   return (
     <nav className={styles.nav}>
       <div className={styles.logoContainer} onClick={handleLogoClick}>
@@ -32,7 +41,7 @@ const NavBar = ({ user, handleLogout }) => {
       <ul className={styles.navLinks}>
         {user ? (
           <li>
-            <div className={styles.profileMenu}>
+            <div className={styles.profileMenu} onClick={handleProfileMenuClick}>
               {profile && profile.photo ? (
                 <div className={styles.profileImage}>
                   <img src={profile.photo} alt="Profile" />
@@ -42,21 +51,23 @@ const NavBar = ({ user, handleLogout }) => {
                   <img src={fake} alt="Profile" />
                 </div>
               )}
-              <ul className={styles.profileOptions}>
-                <li>
-                  <NavLink
-                    to="/auth/change-password"
-                    activeClassName={styles.active}
-                  >
-                    Change Password
-                  </NavLink>
-                </li>
-                <li>
-                  <button className={styles.logoutBtn} onClick={handleLogout}>
-                    Log Out
-                  </button>
-                </li>
-              </ul>
+              {isProfileMenuOpen && (
+                <ul className={styles.profileOptions}>
+                  <li>
+                    <NavLink
+                      to="/auth/change-password"
+                      activeClassName={styles.active}
+                    >
+                      Change Password
+                    </NavLink>
+                  </li>
+                  <li>
+                    <button className={styles.logoutBtn} onClick={handleLogoutClick}>
+                      Log Out
+                    </button>
+                  </li>
+                </ul>
+              )}
             </div>
           </li>
         ) : (
