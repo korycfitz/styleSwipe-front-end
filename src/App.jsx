@@ -33,7 +33,6 @@ function App() {
     photo: ''
   })
 
-
   const navigate = useNavigate()
 
   useEffect(() => {

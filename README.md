@@ -1,74 +1,82 @@
-# Decoupled MERN Stack with JWT Auth Template - Front End
+# [StyleSwipe](https://style-swipe.netlify.app)
 
-This is the front end of a decoupled MERN Stack app that includes JWT Authentication.
+![Styleswipe Logo](../src/assets/landing_logo.png)
 
-When combined with the back end found [here](https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-back-end), you'll have all you need to build a full stack MERN app!
+# Check out a user-based collection of the trendiest clothes on  StyleSwipe
 
-Use this to go build things! 🚀
+<p>
+  StyleSwipe is a MERN stack app using JWT Authentication. Upload, browse, and comment on outfits posted from other users across the web.
+</p>
+<br></br>
 
-## To Use This Template
+## Getting Started
+1. Access our application [here](https://style-swipe.netlify.app)
+2. Sign up or Login to StyleSwipe by clicking on either icon on the top right corner.
+3. Click the "+" button to upload a new outfit.
+3. Click outfits to browse all user submitted outfits.
 
-**Replace `<name-of-your-app-here>` (including the `<` and `>`) in the commands below with the name of your app!**
+### Keep in mind that this folder only represents the front end of our decoupled application, to access and view the back end, please click [here](https://github.com/korycfitz/StyleSwipe-back-end)
 
-```bash
-git clone https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-front-end <name-of-your-app-here>-front-end
-cd <name-of-your-app-here>-front-end
-code .
-```
+<br></br>
 
-With the project open in VS Code, open a terminal and run:
-
-```bash
-rm -rf .git
-```
-
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
-
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
-
-Re-initialize a git repository:
-
-```bash
-git init
-```
-
-Create a repo for this project on GitHub and add that remote to your project with:
-
-```bash
-git remote add origin your-repo-URL-here
-```
-
-Run `npm i` to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-touch a `.env` file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
+## Highlight
+<p>
+  StyleSwipe takes into account the logged in user when displaying all outfits, and will use those passed parameters to create a personalized index of all the logged in user's outfits. This was a big stepping stone in understanding how information is passed from the back end to front by URI calls. 
+</p>
 
 ```
-VITE_BACK_END_SERVER_URL=http://localhost:3001
+async function outfitIndex(req, res) {
+  try {
+    const profile = await Profile.findById(req.user.profile)
+    const outfits = await Outfit.find({ _id: profile.outfits })
+      .populate('author')
+      .sort({ createdAt: 'desc' })
+    res.status(201).json(outfits)
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err)
+  }
+}
 ```
+<br></br>
 
-> 🚨 DO NOT place secrets in this `.env` file. The contents of this file WILL be exposed to site visitors. We are only using the front-end .env to create variables specific to the environment the application is running in.
+## Contributors
+- [Kory Fitzgerald](https://github.com/korycfitz/)
+- [Rafi Talukder](https://github.com/RT527/)
+- [Christian Musto](https://github.com/officialmusto/)
+- [Matt A Ramirez](https://github.com/mars-1002/)
 
-Delete this README.md, then make an initial commit:
+<br></br>
 
-```bash
-git add .
-git commit -m "initial commit"
-git push origin main
-```
+## Technologies Used
 
-Finally, start up the app with:
-```bash
-npm run dev
-```
+- JavaScript
+- HTML
+- CSS
+- Docker
+- [fly.io](https://fly.io/)
+- Git
+- [Postman](https://www.postman.com/)
+- NodeJS
+- Vite
+- [Netlify](https://www.netlify.com/)
+- Mongoose
+- MongoDB
+- Express
+- [Cloudinary](https://cloudinary.com/)
+- [Whimsicial](https://whimsical.com/)
+- [Trello](https://trello.com/)
 
-You're done!
+
+## Attributions
+- [Looka](https://looka.com/onboarding) for creating a logo image using generative AI software.
+- [pngwing](https://www.pngwing.com/) for PNG assets used for our site.
+
+<br></br>
+
+## Icebox
+* [x]
+* [ ]
+* [ ]
+* [ ]
+* [ ]
