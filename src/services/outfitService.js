@@ -78,7 +78,8 @@ async function deleteOutfit(outfitId){
   try{
     const res = await fetch(`${BASE_URL}/${outfitId}`, {
       method: 'DELETE',
-      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}` }
     })
     return res.json()
   }catch (err) {
