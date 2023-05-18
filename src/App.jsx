@@ -48,7 +48,7 @@ function App() {
   const handleAddOutfit = async (outfitFormData) => {
     const newOutfit = await outfitService.create(outfitFormData)
     setOutfits([newOutfit, ...outfits])
-    navigate(`/outfits/${newOutfit.outfitId}`)
+    navigate(`/outfits/${user.outfitId}`)
   }
 
   const handleUploadPhoto = (evt) => {
@@ -93,11 +93,11 @@ function App() {
             </ProtectedRoute>
           }/>
         <Route
-          path='/outfits' element={<ShowOutfit outfits={outfits} user={user}/>}/>
+          path='/outfits' element={<ShowOutfit outfits={outfits} user={user} />}/>
         <Route 
           path='/outfits/new' element={< NewOutfit handleAddOutfit={handleAddOutfit} handleUploadPhoto={handleUploadPhoto}/>}/>
         <Route 
-          path='/profiles/:userId' element={< UserPage />}/>
+          path='/profiles/:userId' element={< UserPage user={user} />}/>
         <Route 
           path='/profiles' element={< UserIndex />}/>
         <Route 

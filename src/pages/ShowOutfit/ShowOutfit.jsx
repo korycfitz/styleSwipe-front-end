@@ -3,8 +3,9 @@ import Outfit from "../../components/Outfit/Outfit"
 import Comments from "../../components/Comments/Comments"
 // import NewComment from "../../components/NewComment/NewComment"
 
-const ShowOutfit = (props) => {
-  console.log(props)
+const ShowOutfit = (props , {user}) => {
+  console.log(props.outfit)
+  console.log(user)
   if (!props.outfits.length) return <h1>Loading...</h1>
   const randomIndex = Math.floor(Math.random() * props.outfits.length)
   const randomOutfit = props.outfits[randomIndex]

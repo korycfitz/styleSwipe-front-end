@@ -17,7 +17,7 @@ const Outfit = ({outfit}) => {
       <div className={styles.container}>
         <h1>Outfit Section</h1>
         {/* THIS WORKS */}
-        <img src={outfit.photo}/>
+        {/* <img src={outfit.photo}/> */}
           <AuthorInfo outfit={outfit}/>
           <OutfitCard outfit={outfit}/> 
           {/* // <OutfitIcons />

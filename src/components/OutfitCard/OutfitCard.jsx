@@ -22,10 +22,10 @@ const OutfitCard = ({outfit}) => {
       <>
         <h3>OUTFIT CARD</h3>
         <h2>test</h2>
-        <img
+        {/* <img
           src={outfit.photo}
           alt="Outfit Photo"
-        />
+        /> */}
         <OutfitPreview outfit={outfit}/>      
       </>}
       {displayOutfitDesc &&

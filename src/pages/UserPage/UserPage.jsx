@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom"
 import styles from "./UserPage.module.css"
 
-const UserPage = () => {
+
+const UserPage = ({user}) => {
+  console.log(user)
   return (
     <div className={styles.container}>
       <div className={styles.buttonContainer}>
@@ -11,12 +13,12 @@ const UserPage = () => {
           </Link>
         </div>
         <div className={styles.buttonBox}>
-          <Link to="/profiles/:userId/swipes" className={styles.button}>
+          <Link to={`/profiles/${user._id}/swipes`} className={styles.button}>
             Swipes
           </Link>
         </div>
         <div className={styles.buttonBox}>
-          <Link to="/profiles/:userId/outfits" className={styles.button}>
+          <Link to={`/profiles/${user._id}/outfits`} className={styles.button}>
             My Outfits
           </Link>
         </div>
