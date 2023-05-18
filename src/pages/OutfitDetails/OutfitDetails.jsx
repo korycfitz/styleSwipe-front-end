@@ -10,51 +10,51 @@ import AuthorInfo from '../../components/AuthorInfo/AuthorInfo'
 import NewComment from '../../components/NewComment/NewComment'
 
 // services
-import * as blogService from '../../services/blogService'
+import * as outfitService from '../../services/outfitService'
 
 // css
-import styles from './BlogDetails.module.css'
+import styles from './OutfitDetails.module.css'
 
-const BlogDetails = (props) => {
-  const { blogId } = useParams()
-  const [blog, setBlog] = useState(null)
+const OutfitDetails = (props) => {
+  const { outfitId } = useParams()
+  const [outfit, setoutfit] = useState(null)
 
   useEffect(() => {
-    const fetchBlog = async () => {
-      const data = await blogService.show(blogId)
-      setBlog(data)
+    const fetchOutfit = async () => {
+      const data = await outfitService.show(outfitId)
+      setoutfit(data)
     }
-    fetchBlog()
-  }, [blogId])
+    fetchOutfit()
+  }, [outfitId])
 
   const handleAddComment = async (commentFormData) => {
-    const newComment = await blogService.createComment(blogId, commentFormData)
-    setBlog({ ...blog, comments: [...blog.comments, newComment],})
+    const newComment = await outfitService.createComment(outfitId, commentFormData)
+    setoutfit({ ...outfit, comments: [...outfit.comments, newComment],})
   }
 
-  console.log('Blog state:', blog);
+  console.log('outfit state:', outfit);
   
-  if (!blog) return <Loading />
+  if (!outfit) return <Loading />
 
   return (
     <main className={styles.container}>
       <article>
         <header>
-          <h3>{blog.category.toUpperCase()}</h3>
-          <h1>{blog.title}</h1>
+          <h3>{outfit.category.toUpperCase()}</h3>
+          <h1>{outfit.title}</h1>
         </header>
         <span>
-          <AuthorInfo content={blog} />
-          {blog.author._id === props.user.profile &&
+          <AuthorInfo content={outfit} />
+          {outfit.author._id === props.user.profile &&
             <>
-              <Link to={`/blogs/${blogId}/edit`} state={blog}>Edit</Link>
-              <button onClick={() => props.handleDeleteBlog(blogId)}>
+              <Link to={`/outfits/${outfitId}/edit`} state={outfit}>Edit</Link>
+              <button onClick={() => props.handleDeleteoutfit(outfitId)}>
                 Delete
               </button>
             </>
           }
         </span>
-        <p>{blog.text}</p>
+        <p>{outfit.description}</p>
       </article>
       <section>
         <h1>Comments</h1>
@@ -64,6 +64,4 @@ const BlogDetails = (props) => {
   )
 }
  
-export default BlogDetails
-
-// touched by rafi
+export default OutfitDetails

@@ -1,11 +1,11 @@
 // components
 import DateCard from '../DateCard/DateCard'
 
-// css
-import styles from './AuthorInfo.module.css'
-
 // assets
 import profileIcon from '../../assets/icons/profile.png'
+
+// css
+import styles from './AuthorInfo.module.css'
 
 const AuthorInfo = (props) => {
   const { content } = props
@@ -24,3 +24,4 @@ const AuthorInfo = (props) => {
 }
 
 export default AuthorInfo
+

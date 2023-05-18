@@ -1,115 +1,136 @@
 // npm modules
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
+
 // pages
-import ChangePassword from './pages/ChangePassword/ChangePassword'
-import EditOutfit from './pages/EditOutfit/EditOutfit'
-import Landing from './pages/Landing/Landing'
-import Login from './pages/Login/Login'
-import NewOutfit from './pages/NewOutfit/NewOutfit'
-import Profiles from './pages/Profiles/Profiles'
-import ShowOutfit from './pages/ShowOutfit/ShowOutfit'
 import Signup from './pages/Signup/Signup'
-import UserIndex from './pages/UserIndex/UserIndex'
-import UserOutfits from './pages/UserOutfits/UserOutfits'
-import UserPage from './pages/UserPage/UserPage'
-import UserSwipes from './pages/UserSwipes/UserSwipes'
+import Login from './pages/Login/Login'
+import Landing from './pages/Landing/Landing'
+import Logout from './pages/Logout/Logout'
+import OutfitList from './pages/OutfitList/OutfitList'
+import OutfitDetails from './pages/OutfitDetails/OutfitDetails'
+import NewOutfit from './pages/NewOutfit/NewOutfit'
+import EditOutfit from './pages/EditOutfit/EditOutfit'
 
 // components
 import NavBar from './components/NavBar/NavBar'
-import FooterBar from './components/FooterBar/FooterBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
 import * as outfitService from './services/outfitService'
+import { getWeatherDataFromAPI } from './services/weatherService'
 
 // styles
 import './App.css'
+
 function App() {
-  const [outfits, setOutfits] = useState([])
   const [user, setUser] = useState(authService.getUser())
-  const [formData, setFormData] = useState({
-    photo: ''
-  })
-
-
+  const [outfits, setOutfits] = useState([])
+  const [coords, setCoords] = useState({})
+  const [weather, setWeather] = useState({})
   const navigate = useNavigate()
 
   useEffect(() => {
-    // detchAllOutfits will serve as index
+    navigator.geolocation.getCurrentPosition(position => {
+      if (coords.lat) return
+      setCoords({lat: position.coords.latitude, lng: position.coords.longitude})
+    }, err => {
+      console.log(err)
+    })
+    const fetchWeatherWithCoords = async () => {
+      if (!coords.lat) return
+      const weatherData = await getWeatherDataFromAPI(coords.lat, coords.lng)
+      setWeather(weatherData)
+    }
+    fetchWeatherWithCoords()
+  }, [coords])
+
+
+  useEffect(() => {
     const fetchAllOutfits = async () => {
       const data = await outfitService.index()
       setOutfits(data)
     }
     if (user) fetchAllOutfits()
   }, [user])
-  
-  const handleAddOutfit = async (outfitFormData) => {
-    const newOutfit = await outfitService.create(outfitFormData)
-    setOutfits([newOutfit, ...outfits])
-    navigate(`/outfits`)
-  }
-
-  const handleUploadPhoto = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
-  }
 
   const handleLogout = () => {
     authService.logout()
     setUser(null)
-    navigate('/')
   }
 
   const handleAuthEvt = () => {
     setUser(authService.getUser())
   }
+
+  const handleAddOutfit = async (outfitFormData) => {
+    const NewOutfit = await outfitService.create(outfitFormData)
+    setOutfits([NewOutfit, ...outfits])
+    navigate('/outfits')
+  }
+
+  const handleUpdateOutfit = async (outfitFormData) => {
+    const updatedOutfit = await outfitService.update(outfitFormData)
+    setOutfits(outfits.map(b => outfitFormData._id === b._id ? updatedOutfit : b))
+    navigate('/outfits')
+  }
+
+  const handleDeleteOutfit = async (outfitId) => {
+    const deletedOutfit = await outfitService.delete(outfitId)
+    setOutfits(blogs.filter(b => b._id !== deletedOutfit._id))
+    navigate('/outfits')
+  }
+
   return (
     <>
-      {<NavBar user={user} handleLogout={handleLogout} />}
+      <NavBar user={user} handleLogout={handleLogout} weather={weather} />
       <Routes>
-        <Route path="/" element={<Landing user={user} handleLogout={handleLogout}/>} />
+        <Route path="/" element={<Landing />} />
         <Route
-          path="/profiles"
+          path='/outfits'
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <OutfitList outfits={outfits}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path="/outfits/:outfitId"
+          element={
+            <ProtectedRoute user={user}>
+              <OutfitDetails user={user} handleDeleteOutfit={handleDeleteOutfit}/>
             </ProtectedRoute>
           }
         />
         <Route
+          path="/outfits/new" 
+          element={
+            <ProtectedRoute user={user}>
+              <NewOutfit handleAddOutfit={handleAddOutfit} />
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path="/outfits/:outfitId/edit" 
+          element={
+            <ProtectedRoute user={user}>
+              <EditOutfit handleUpdateOutfit={handleUpdateOutfit} />
+            </ProtectedRoute>
+          } 
+        />
+        <Route path="/auth/logout" element={<Logout />} />
+        <Route
           path="/auth/signup"
-          element={<Signup handleAuthEvt={handleAuthEvt} outfits={outfits}/>}
+          element={<Signup handleAuthEvt={handleAuthEvt} />}
         />
         <Route
           path="/auth/login"
-          element={<Login handleAuthEvt={handleAuthEvt} outfits={outfits}/>}
+          element={<Login handleAuthEvt={handleAuthEvt} />}
         />
-        <Route
-          path="/auth/change-password"
-          element={
-            <ProtectedRoute user={user}>
-              <ChangePassword handleAuthEvt={handleAuthEvt} />
-            </ProtectedRoute>
-          }/>
-        <Route
-          path='/outfits' element={<ShowOutfit outfits={outfits} user={user} />}/>
-        <Route 
-          path='/outfits/new' element={< NewOutfit handleAddOutfit={handleAddOutfit} handleUploadPhoto={handleUploadPhoto}/>}/>
-        <Route 
-          path='/profiles/:userId' element={< UserPage user={user} />}/>
-        <Route 
-          path='/profiles' element={< UserIndex />}/>
-
-        <Route 
-          path='/profiles/:userId/outfits' element={< UserOutfits />}/>
-        <Route 
-          path='/profiles/:userId/outfits/edit' element={< EditOutfit />}/>
       </Routes>
-      <FooterBar user={user} />
     </>
   )
 }
 
 export default App
-///tst
