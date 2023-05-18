@@ -1,45 +1,28 @@
-
 // npm modules
-import { useState } from 'react'
+import { Link } from "react-router-dom"
 
 // components
-import OutfitPreview from '../OutfitPreview/OutfitPreview'
-import OutfitDesc from '../OutfitDesc/OutfitDesc'
+import Icon from '../Icon/Icon'
+import AuthorInfo from '../AuthorInfo/AuthorInfo'
 
 // css
 import styles from './OutfitCard.module.css'
 
-const OutfitCard = ({outfit}) => {
-  const [displayOutfitDesc, setDisplayOutfitDesc] = useState(false)
-
-  function handleInfoClick() {
-    setDisplayOutfitDesc(!displayOutfitDesc)
-  }
-
-  return ( 
-    <div className={styles.container}>
-      {!displayOutfitDesc &&
-      <>
-        <h3>OUTFIT CARD</h3>
-        <h2>test</h2>
-        {/* <img
-          src={outfit.photo}
-          alt="Outfit Photo"
-        /> */}
-        <OutfitPreview outfit={outfit}/>      
-      </>}
-      {displayOutfitDesc &&
-      <>
-        <h3>OUTFIT CARD</h3>
-        <OutfitDesc outfit={outfit}/>
-      </>}
-
-
-      <button onClick={handleInfoClick}>
-        {displayOutfitDesc ? "hide" : "show"} description
-      </button>
-    </div>
+const OutfitCard = ({ outfit }) => {
+  return (
+    <Link to={`/outfits/${outfit._id}`} state={outfit}>
+      <article className={styles.container}>
+        <header>
+          <span>
+            <h1>{ outfit.photo }</h1>
+            <Icon category={outfit.category} />
+          </span>
+          <AuthorInfo content={outfit} />
+        </header>
+        <p>{ outfit.description }</p>
+      </article>
+    </Link>
   )
 }
-
+ 
 export default OutfitCard
