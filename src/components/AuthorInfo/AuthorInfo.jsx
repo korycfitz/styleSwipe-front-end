@@ -1,6 +1,9 @@
 // components
 import DateCard from '../DateCard/DateCard'
 
+// assets
+import profileIcon from '../../assets/icons/profile.png'
+
 // css
 import styles from './AuthorInfo.module.css'
 
@@ -21,5 +24,3 @@ const AuthorInfo = (props) => {
 }
 
 export default AuthorInfo
-
-//touched by RT

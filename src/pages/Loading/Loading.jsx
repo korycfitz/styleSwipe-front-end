@@ -1,10 +1,13 @@
+// assets
+import loadingIcon from '../../assets/branding/loading.svg'
+
 // css
 import styles from './Loading.module.css'
 
 const Loading = () => {
   return (
     <main className={styles.container}>
-      <h1>A cute owl</h1>
+      <img src={loadingIcon} alt="A cute owl" />
     </main>
   )
 }

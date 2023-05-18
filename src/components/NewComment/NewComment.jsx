@@ -1,6 +1,11 @@
-//css
+// npm imports
+import { useState } from "react"
+
+// css
 import styles from './NewComment.module.css'
 
+// components
+import Icon from "../Icon/Icon"
 
 const NewComment = (props) => {
   const [formData, setFormData] = useState({ text: '' })
@@ -31,7 +36,5 @@ const NewComment = (props) => {
     </form>
   )
 }
- 
-export default NewComment;
 
-// touched by Rafi
+export default NewComment;
