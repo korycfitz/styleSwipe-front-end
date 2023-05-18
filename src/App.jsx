@@ -48,7 +48,7 @@ function App() {
   const handleAddOutfit = async (outfitFormData) => {
     const newOutfit = await outfitService.create(outfitFormData)
     setOutfits([newOutfit, ...outfits])
-    navigate(`/outfits/${user.outfitId}`)
+    navigate(`/outfits`)
   }
 
   const handleUploadPhoto = (evt) => {
