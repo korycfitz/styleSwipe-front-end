@@ -2,7 +2,7 @@
 import styles from './UserOutfits.module.css'
 
 //components
-import OutfitList from "../../components/OutfitList/OutfitList"
+import OutfitList from "../OutfitList/OutfitList"
 
 const UserOutfits = () => {
   return (
