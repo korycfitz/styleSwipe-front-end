@@ -83,7 +83,9 @@
   display: block;
 }
 
-.logoutBtn {
+.profileOptions button {
+  display: block;
+  margin-top: 5px;
   background-color: transparent;
   border: none;
   color: #333;
@@ -91,8 +93,8 @@
   font-size: 16px;
   font-weight: bold;
   text-decoration: underline;
-  }
-  
-  .logoutBtn:hover {
+}
+
+.profileOptions button:hover {
   text-decoration: none;
-  }
+}
