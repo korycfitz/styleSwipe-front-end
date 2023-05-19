@@ -4,7 +4,9 @@ import logo from '../../assets/landing_logo.png'
 const Landing = () => {
   return (
     <main className={styles.container}>
-      <img src={logo} alt="Landing Logo" className={styles.logo} />
+      <div className={styles.imageContainer}>
+        <img src={logo} alt="Landing Logo" className={styles.logo} />
+      </div>
     </main>
   )
 }
