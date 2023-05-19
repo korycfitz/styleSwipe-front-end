@@ -22,14 +22,14 @@ const NavBar = ({ user, handleLogout }) => {
     fetchProfile()
   }, [user])
 
-  
+  // We have a bug involving this handleLogoClick redirecting to a 404, we'll be tackling this error after the project as we had to  cut it out because of a git problem we were resolving with Ben.
   const handleLogoClick = () => {
     window.location.href = '/outfits'
   }
   
   return (
     <nav className={styles.nav}>
-      <div className={styles.logoContainer} onClick={handleLogoClick}>
+      <div className={styles.logoContainer} /*onClick={handleLogoClick}*/>
         <img id="app-logo" src={logo} alt="StyleSwipe" />
       </div>
       <ul className={styles.navLinks}>
