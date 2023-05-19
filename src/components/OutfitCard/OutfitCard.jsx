@@ -16,7 +16,6 @@ const OutfitCard = ({ outfit }) => {
             <h1>
               <img src={outfit.photo} alt="Outfit" width="100" height="100" />
             </h1>
-            <Icon category={outfit.category} />
           </span>
           <AuthorInfo content={outfit} />
         </header>

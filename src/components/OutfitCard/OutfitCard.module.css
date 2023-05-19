@@ -54,6 +54,8 @@
   text-align-last: left;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
+  color: rgb(30, 28, 28);
+  opacity: 1;
 }
 
 .container div h4 {
