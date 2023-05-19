@@ -48,4 +48,4 @@ const EditOutfit = (props) => {
   )
 }
 
-export default EditOutfit;
+export default EditOutfit
