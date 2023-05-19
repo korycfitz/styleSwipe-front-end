@@ -1,4 +1,3 @@
-// npm modules
 import { Link } from "react-router-dom"
 
 // components
@@ -14,7 +13,9 @@ const OutfitCard = ({ outfit }) => {
       <article className={styles.container}>
         <header>
           <span>
-            <h1>{ outfit.photo }</h1>
+            <h1>
+              <img src={outfit.photo} alt="Outfit" width="100" height="100" />
+            </h1>
             <Icon category={outfit.category} />
           </span>
           <AuthorInfo content={outfit} />
@@ -24,5 +25,5 @@ const OutfitCard = ({ outfit }) => {
     </Link>
   )
 }
- 
+
 export default OutfitCard

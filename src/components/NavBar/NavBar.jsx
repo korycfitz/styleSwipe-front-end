@@ -44,14 +44,6 @@ const NavBar = ({ user, handleLogout }) => {
               )}
               <ul className={styles.profileOptions}>
                 <li>
-                  <NavLink
-                    to="/auth/change-password"
-                    activeClassName={styles.active}
-                  >
-                    <button className={styles.profileButton}>Change Password</button>
-                  </NavLink>
-                </li>
-                <li>
                   <button className={`${styles.logoutBtn} ${styles.profileButton}`} onClick={handleLogout}>
                     Log Out
                   </button>
