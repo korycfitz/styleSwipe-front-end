@@ -1,8 +1,12 @@
 # [StyleSwipe](https://style-swipe.netlify.app)
 
-![Styleswipe Logo](../src/assets/landing_logo.png)
+<div align="center">
+ <img height=300px src="../src/assets/style-swipe.png" alt="Project logo"></a>
+</div>
 
-# Check out a user-based collection of the trendiest clothes on  StyleSwipe
+<h3 align="center">StyleSwipe</h3>
+
+# Check out a user-based collection of the trendiest clothes on StyleSwipe
 
 <p>
   StyleSwipe is a MERN stack app using JWT Authentication. Upload, browse, and comment on outfits posted from other users across the web.
@@ -10,6 +14,7 @@
 <br></br>
 
 ## Getting Started
+
 1. Access our application [here](https://style-swipe.netlify.app)
 2. Sign up or Login to StyleSwipe by clicking either icon on the top right corner.
 3. Click the "+" button to upload a new outfit.
@@ -69,6 +74,7 @@ async function outfitIndex(req, res) {
 
 
 ## Attributions
+
 - [Looka](https://looka.com/onboarding) for creating a logo image using generative AI software.
 - [Pngwing](https://www.pngwing.com/) for PNG assets used for our site.
 
