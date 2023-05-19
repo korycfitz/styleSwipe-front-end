@@ -8,7 +8,6 @@ import logo from '../../assets/landing_logo.png'
 import styles from './NavBar.module.css'
 
 // components
-import WeatherInfo from '../WeatherInfo/WeatherInfo'
 
 const NavBar = ({ user, handleLogout, weather }) => {
   
@@ -26,11 +25,6 @@ const NavBar = ({ user, handleLogout, weather }) => {
       <li>
         <NavLink to="/auth/logout" onClick={handleLogout}>LOG OUT</NavLink>
       </li>
-      {weather.weather && 
-        <li>
-          <WeatherInfo weather={weather} />
-        </li>
-      }
     </ul>
   )
 
