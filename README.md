@@ -14,6 +14,7 @@
 <br></br>
 
 ## Getting Started
+
 1. Access our application [here](https://style-swipe.netlify.app)
 2. Sign up or Login to StyleSwipe by clicking either icon on the top right corner.
 3. Click the "+" button to upload a new outfit.
