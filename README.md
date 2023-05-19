@@ -1,6 +1,10 @@
 # [StyleSwipe](https://style-swipe.netlify.app)
 
-![Styleswipe Logo](../src/assets/landing_logo.png)
+<div align="center">
+ <img height=300px src="../src/assets/style-swipe.png" alt="Project logo"></a>
+</div>
+
+<h3 align="center">Christmasship</h3>
 
 # Check out a user-based collection of the trendiest clothes on  StyleSwipe
 
