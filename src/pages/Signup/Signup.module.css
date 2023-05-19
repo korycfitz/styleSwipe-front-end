@@ -58,14 +58,14 @@
 .container button {
   color: white;
   font-weight: 600;
-  background: #654343;
+  background: #434965;
   margin: 21px 0px 0px 0px;
   cursor: pointer;
 }
 
 .container button:disabled {
   color: rgb(200, 200, 200);
-  background: #654343;
+  background: #65435e;
   cursor: not-allowed;
 }
 

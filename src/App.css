@@ -2,11 +2,15 @@
   box-sizing: border-box;
 }
 
+ul li::marker {
+  content: none;
+}
+
 html, body {
   margin: 0;
   height: 100%;
   overflow: hidden;
-  background-color: #f2f4f8;
+  background-color: #000000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: canada-type-gibson, sans-serif;
