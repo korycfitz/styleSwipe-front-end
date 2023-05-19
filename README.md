@@ -4,9 +4,9 @@
  <img height=300px src="../src/assets/style-swipe.png" alt="Project logo"></a>
 </div>
 
-<h3 align="center">Christmasship</h3>
+<h3 align="center">StyleSwipe</h3>
 
-# Check out a user-based collection of the trendiest clothes on  StyleSwipe
+# Check out a user-based collection of the trendiest clothes on StyleSwipe
 
 <p>
   StyleSwipe is a MERN stack app using JWT Authentication. Upload, browse, and comment on outfits posted from other users across the web.
@@ -73,6 +73,7 @@ async function outfitIndex(req, res) {
 
 
 ## Attributions
+
 - [Looka](https://looka.com/onboarding) for creating a logo image using generative AI software.
 - [Pngwing](https://www.pngwing.com/) for PNG assets used for our site.
 
