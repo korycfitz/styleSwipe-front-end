@@ -8,6 +8,7 @@ import Loading from "../Loading/Loading"
 // components
 import AuthorInfo from '../../components/AuthorInfo/AuthorInfo'
 import NewComment from '../../components/NewComment/NewComment'
+import Comments from "../../components/Comments/Comments"
 
 // services
 import * as outfitService from '../../services/outfitService'
@@ -30,6 +31,7 @@ const outfitDetails = (props) => {
   const handleAddComment = async (commentFormData) => {
     const newComment = await outfitService.createComment(outfitId, commentFormData)
     setOutfit({ ...outfit, comments: [...outfit.comments, newComment],})
+    console.log(newComment.content)
   }
   
   if (!outfit) return <Loading /> 
@@ -59,6 +61,7 @@ const outfitDetails = (props) => {
       <section>
         <h1>Comments</h1>
         <NewComment handleAddComment={handleAddComment}/>
+        <Comments comments={outfit.comments} user={props.user} />
       </section>
     </main>
   )
