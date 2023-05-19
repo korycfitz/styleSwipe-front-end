@@ -9,19 +9,19 @@
 
 # Check out a user-based collection of the trendiest clothes on StyleSwipe
 
+
+## 🧐 About
+
 <p>
   StyleSwipe is a MERN stack app using JWT Authentication. Upload, browse, and comment on outfits posted from other users across the web.
-</p><br>
+</p>
 
-## Getting Started
+## 🏁 Getting Started
 
-1. Access our application [here](https://style-swipe.netlify.app).
-2. Sign up or login to StyleSwipe by clicking either icon on the top right corner.
-3. Click the "+" button to upload a new outfit.
-4. Click outfits to browse all user submitted outfits.
-
-### Keep in mind that this folder only represents the front end of our decoupled application. To access and view the back end, please click [here](https://github.com/korycfitz/StyleSwipe-back-end).<br><br>
-
+1. Access our deployed front-end application [here](https://style-swipe.netlify.app).
+2. Access our Trello planning materials [here](https://trello.com/b/PI1Ocv36/styleswipe).
+3. Access our backend Github repository [here](https://github.com/korycfitz/StyleSwipe-back-end).
+<br><br>
 ## Highlight
 <p>
   StyleSwipe takes into account the logged in user when displaying all outfits, and will use those passed parameters to create a personalized index of all the logged in user's outfits. This was a big stepping stone in understanding how information is passed from the back end to front by URI calls. 
@@ -43,7 +43,7 @@ async function outfitIndex(req, res) {
 ```
 <br>
 
-## Contributors
+## ✍️ Authors
 - [Kory Fitzgerald](https://github.com/korycfitz/)
 - [Rafi Talukder](https://github.com/RT527/)
 - [Christian Musto](https://github.com/officialmusto/)
@@ -51,7 +51,7 @@ async function outfitIndex(req, res) {
 
 <br>
 
-## Technologies Used
+## ⛏️ Technologies Used
 
 - JavaScript
 - HTML
@@ -72,14 +72,16 @@ async function outfitIndex(req, res) {
 
 <br>
 
-## Attributions
+## 🎈 Attributions
 
 - [Looka](https://looka.com/onboarding) for creating a logo image using generative AI software.
-- [Pngwing](https://www.pngwing.com/) for PNG assets used for our site.
+- [Pngwing](https://www.pngwing.com/) for PNG assets used in our application.
+- [Favicon](https://www.menshealth.com/) for viewing a favicon across all pages of our application.
 
 <br>
 
-## Icebox
+## 🚀 Icebox
+
 * [x]
 * [ ]
 * [ ]
