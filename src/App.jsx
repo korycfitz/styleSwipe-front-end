@@ -7,6 +7,7 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Logout from './pages/Logout/Logout'
+import Profiles from './pages/Profiles/Profiles'
 import OutfitList from './pages/OutfitList/OutfitList'
 import OutfitDetails from './pages/OutfitDetails/OutfitDetails'
 import NewOutfit from './pages/NewOutfit/NewOutfit'
@@ -69,6 +70,14 @@ function App() {
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route
+          path="/profiles"
+          element={
+            <ProtectedRoute user={user}>
+              <Profiles />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path='/outfits'
           element={
