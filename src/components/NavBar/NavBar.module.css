@@ -117,3 +117,7 @@ html, body {
 .profileButton:hover {
   background-color: #555;
 }
+
+.nav:hover .profileOptions {
+  display: block;
+}
