@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 
 // components
-import Icon from '../Icon/Icon'
 import AuthorInfo from '../AuthorInfo/AuthorInfo'
 
 // css
@@ -16,7 +15,6 @@ const OutfitCard = ({ outfit }) => {
             <h1>
               <img src={outfit.photo} alt="Outfit" width="100" height="100" />
             </h1>
-            <Icon category={outfit.category} />
           </span>
           <AuthorInfo content={outfit} />
         </header>
