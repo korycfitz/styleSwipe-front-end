@@ -11,11 +11,11 @@
 
 ## Getting Started
 1. Access our application [here](https://style-swipe.netlify.app)
-2. Sign up or Login to StyleSwipe by clicking on either icon on the top right corner.
+2. Sign up or Login to StyleSwipe by clicking either icon on the top right corner.
 3. Click the "+" button to upload a new outfit.
-3. Click outfits to browse all user submitted outfits.
+4. Click outfits to browse all user submitted outfits.
 
-### Keep in mind that this folder only represents the front end of our decoupled application, to access and view the back end, please click [here](https://github.com/korycfitz/StyleSwipe-back-end)
+### Keep in mind that this folder only represents the front end of our decoupled application. To access and view the back end, please click [here](https://github.com/korycfitz/StyleSwipe-back-end)
 
 <br></br>
 
@@ -70,7 +70,7 @@ async function outfitIndex(req, res) {
 
 ## Attributions
 - [Looka](https://looka.com/onboarding) for creating a logo image using generative AI software.
-- [pngwing](https://www.pngwing.com/) for PNG assets used for our site.
+- [Pngwing](https://www.pngwing.com/) for PNG assets used for our site.
 
 <br></br>
 
@@ -80,4 +80,3 @@ async function outfitIndex(req, res) {
 * [ ]
 * [ ]
 * [ ]
-<br>
