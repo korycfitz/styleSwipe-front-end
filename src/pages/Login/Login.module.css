@@ -5,7 +5,10 @@
   align-items: center;
 }
 
-.container p { margin: 0; padding: 0px 0 10px; }
+.container p {
+  margin: 0;
+  padding: 0px 0 10px;
+}
 
 .container img {
   width: 65%;
@@ -30,7 +33,8 @@
   margin: 7px 0px 14px 0px;
 }
 
-.container input, button { 
+.container input,
+button {
   width: 100%;
   padding: 14px;
   font-size: 14px;
@@ -89,4 +93,10 @@ input:focus {
   .container form {
     min-width: 100%;
   }
+}
+
+.logo {
+  width: 300px; 
+  height: auto; 
+  max-width: 100%; 
 }
