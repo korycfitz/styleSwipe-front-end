@@ -79,6 +79,7 @@ async function outfitIndex(req, res) {
 
 ## 🎈 Attributions
 
+- [Looka](https://looka.com/onboarding) for creating a logo image using generative AI software.
 - [Pngwing](https://www.pngwing.com/) for PNG assets used in our application.
 - [Favicon](https://www.menshealth.com/) for viewing a favicon across all pages of our application.
 
