@@ -7,14 +7,17 @@
  <img height=300px src="./src/assets/style-swipe.png" alt="Project logo"></a>
 </div>
 
-# Check out a user-based collection of the trendiest clothes on StyleSwipe
 
+<p style="font-size: 20px; text-align: center;">
+  Check out a user-based collection of the trendiest clothes on StyleSwipe
+</p>
 
 ## 🧐 About
 
 <p>
   StyleSwipe is a MERN stack app using JWT Authentication. Upload, browse, and comment on outfits posted from other users across the web.
 </p>
+<br>
 
 ## 🏁 Getting Started
 
