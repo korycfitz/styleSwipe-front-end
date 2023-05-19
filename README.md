@@ -1,28 +1,26 @@
-# [StyleSwipe](https://style-swipe.netlify.app)
+<div style="text-align: center;">
+  <a href="https://style-swipe.netlify.app" style="font-size: 30px;">StyleSwipe</a>
+</div>
+<br>
 
 <div align="center">
- <img height=300px src="../src/assets/style-swipe.png" alt="Project logo"></a>
+ <img height=300px src="./src/assets/style-swipe.png" alt="Project logo"></a>
 </div>
-
-<h3 align="center">StyleSwipe</h3>
 
 # Check out a user-based collection of the trendiest clothes on StyleSwipe
 
 <p>
   StyleSwipe is a MERN stack app using JWT Authentication. Upload, browse, and comment on outfits posted from other users across the web.
-</p>
-<br></br>
+</p><br>
 
 ## Getting Started
 
-1. Access our application [here](https://style-swipe.netlify.app)
-2. Sign up or Login to StyleSwipe by clicking either icon on the top right corner.
+1. Access our application [here](https://style-swipe.netlify.app).
+2. Sign up or login to StyleSwipe by clicking either icon on the top right corner.
 3. Click the "+" button to upload a new outfit.
 4. Click outfits to browse all user submitted outfits.
 
-### Keep in mind that this folder only represents the front end of our decoupled application. To access and view the back end, please click [here](https://github.com/korycfitz/StyleSwipe-back-end)
-
-<br></br>
+### Keep in mind that this folder only represents the front end of our decoupled application. To access and view the back end, please click [here](https://github.com/korycfitz/StyleSwipe-back-end).<br><br>
 
 ## Highlight
 <p>
@@ -43,15 +41,15 @@ async function outfitIndex(req, res) {
   }
 }
 ```
-<br></br>
+<br>
 
 ## Contributors
 - [Kory Fitzgerald](https://github.com/korycfitz/)
 - [Rafi Talukder](https://github.com/RT527/)
 - [Christian Musto](https://github.com/officialmusto/)
-- [Matt A Ramirez](https://github.com/mars-1002/)
+- [Matt A. Ramirez](https://github.com/mars-1002/)
 
-<br></br>
+<br>
 
 ## Technologies Used
 
@@ -72,13 +70,14 @@ async function outfitIndex(req, res) {
 - [Whimsicial](https://whimsical.com/)
 - [Trello](https://trello.com/)
 
+<br>
 
 ## Attributions
 
 - [Looka](https://looka.com/onboarding) for creating a logo image using generative AI software.
 - [Pngwing](https://www.pngwing.com/) for PNG assets used for our site.
 
-<br></br>
+<br>
 
 ## Icebox
 * [x]
