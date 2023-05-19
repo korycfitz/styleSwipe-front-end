@@ -13,7 +13,7 @@
 1. Access our application [here](https://style-swipe.netlify.app)
 2. Sign up or Login to StyleSwipe by clicking either icon on the top right corner.
 3. Click the "+" button to upload a new outfit.
-3. Click outfits to browse all user submitted outfits.
+4. Click outfits to browse all user submitted outfits.
 
 ### Keep in mind that this folder only represents the front end of our decoupled application. To access and view the back end, please click [here](https://github.com/korycfitz/StyleSwipe-back-end)
 
