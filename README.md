@@ -88,6 +88,6 @@ async function outfitIndex(req, res) {
 ## 🚀 Icebox
 
 - Iterate on the current styling.
-- AAU, I want to click a button, so that I can message another user using socket.io.
-- AAU, I want to swipe 'slay' or 'nay' on an outfit, so that I can view the outfits that I have 'slayed' or 'nayed'.
-- AAU, I want to see a random outfit after I log in so that I can 'slay' or 'nay' it.
+- AAU, I want to enter text into an input field, so that I can message another user using socket.io.
+- AAU, I want to click a button to 'slay' or 'nay', so that I can view the outfits that I have 'slayed' or 'nayed'.
+- AAU, I want to see a random outfit after I log in, so that I can 'slay' or 'nay' it.
