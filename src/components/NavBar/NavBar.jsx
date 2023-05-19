@@ -12,22 +12,21 @@ import fake from '../../assets/no_userprofile_picture.png'
 
 const NavBar = ({ user, handleLogout }) => {
   const [profile, setProfile] = useState(null)
-
   const fetchProfile = async () => {
     if (user && user.profileId) {
       const fetchedProfile = await profileService.getProfile(user.profileId)
       setProfile(fetchedProfile)
     }
   }
-
   useEffect(() => {
     fetchProfile()
   }, [user])
 
+  
   const handleLogoClick = () => {
     window.location.href = '/outfits'
   }
-
+  
   return (
     <nav className={styles.nav}>
       <div className={styles.logoContainer} onClick={handleLogoClick}>
