@@ -8,9 +8,9 @@
 </div>
 
 
-<p style="font-size: 20px; text-align: center;">
+<p style="font-size: 20px; text-align: center;"><br>
   Check out a user-based collection of the trendiest clothes on StyleSwipe
-</p>
+</p><br>
 
 ## 🧐 About
 
