@@ -32,7 +32,7 @@ const outfitDetails = (props) => {
     setOutfit({ ...outfit, comments: [...outfit.comments, newComment],})
   }
   
-  if (!outfit) return <Loading />
+  if (!outfit) return <Loading /> 
 
   return (
     <main className={styles.container}>
