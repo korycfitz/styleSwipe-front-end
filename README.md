@@ -84,8 +84,7 @@ async function outfitIndex(req, res) {
 
 ## 🚀 Icebox
 
-- Allow the user to drag ships onto the board instead of having the user click individual squares.
 - Iterate on the current styling.
-- Improve the logic for the computer's guesses.
-- Improve the logic for the computer's ship placement on the board.
-- Implement AI functionality to store the user's and the computer's guesses and to have the computer strategically place its ships.
+- AAU, I want to click a button, so that I can message another user using socket.io.
+- AAU, I want to swipe 'slay' or 'nay' on an outfit, so that I can view the outfits that I have 'slayed' or 'nayed'.
+- AAU, I want to see a random outfit after I log in, so that I can 'slay' or 'nay' it.
