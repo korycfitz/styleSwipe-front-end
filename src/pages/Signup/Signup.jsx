@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import * as authService from '../../services/authService'
 
 // assets
-import signupIcon from '../../assets/branding/signup.svg'
+import logo from '../../assets/styleswipe_logo.png'
 
 // css
 import styles from './Signup.module.css'
@@ -37,7 +37,6 @@ const Signup = ({ handleAuthEvt }) => {
     const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
     const photoFormat = file.name.split('.').at(-1)
 
-    // cloudinary supports files up to 10.4MB each as of May 2023
     if (file.size >= 10485760) {
       errMsg = "Image must be smaller than 10.4MB"
       isFileInvalid = true
@@ -83,7 +82,7 @@ const Signup = ({ handleAuthEvt }) => {
   return (
     <main className={styles.container}>
       <section>
-        <img src={signupIcon} alt="An owl sitting on a sign" />
+        <img src={logo} alt="StyleSwipe" />
       </section>
       <section>
         <form autoComplete="off" onSubmit={handleSubmit}>
