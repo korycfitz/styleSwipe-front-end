@@ -60,16 +60,18 @@ async function outfitIndex(req, res) {
 - [fly.io](https://fly.io/)
 - Git
 - [Postman](https://www.postman.com/)
-- NodeJS
+- [Node.js](https://nodejs.org/en/)
 - Vite
 - [Netlify](https://www.netlify.com/)
-- Mongoose
-- MongoDB
-- Express
+- [MongoDB](https://www.mongodb.com/)
+- [Express.js](https://expressjs.com/)
 - [Cloudinary](https://cloudinary.com/)
 - [Whimsicial](https://whimsical.com/)
 - [Trello](https://trello.com/)
-
+- [Github](https://github.com/)
+- [Visual Studio Code](https://code.visualstudio.com/) 
+- [Trello](https://trello.com/)
+- [Mongoose](https://mongoosejs.com/)
 <br>
 
 ## 🎈 Attributions
@@ -82,8 +84,8 @@ async function outfitIndex(req, res) {
 
 ## 🚀 Icebox
 
-* [x]
-* [ ]
-* [ ]
-* [ ]
-* [ ]
+- Allow the user to drag ships onto the board instead of having the user click individual squares.
+- Iterate on the current styling.
+- Improve the logic for the computer's guesses.
+- Improve the logic for the computer's ship placement on the board.
+- Implement AI functionality to store the user's and the computer's guesses and to have the computer strategically place its ships.
