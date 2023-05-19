@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import * as authService from '../../services/authService'
 
 // assets
-import loginIcon from '../../assets/branding/login.svg'
+import logo from '../../assets/styleswipe_logo.png'
 
 // css
 import styles from './Login.module.css'
@@ -49,7 +49,7 @@ const LoginPage = ({ handleAuthEvt }) => {
   return (
     <main className={styles.container}>
       <section>
-        <img src={loginIcon} alt="An owl sitting on a sign" />
+        <img src={logo} alt="Style Swipe" className={`${styles.logo} logo`} />
       </section>
       <section>
         <form autoComplete="off" onSubmit={handleSubmit}>
