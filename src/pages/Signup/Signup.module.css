@@ -1,115 +1,119 @@
 .container {
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start; 
-  height: 100vh;
-  background-color: rgba(100, 99, 82, 0.5);
-  padding-top: 2rem;
-  box-sizing: border-box;
 }
 
-.form {
+.container p { margin: 0; padding: 0px 0 10px; }
+
+.container img {
+  width: 65%;
+  max-width: 500px;
+}
+
+.container section {
+  width: 50%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  padding: 28px 21px;
   align-items: center;
-  justify-content: flex-start;
-  width: 500px;
-  padding: 2rem;
-  border-radius: 10px;
-  background-color: #121212;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-}
-
-.inputGroup {
-  display: flex;
   flex-direction: column;
-  align-items: center; 
-  width: 100%;
-  margin-bottom: 1rem;
 }
 
-.label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-  font-size: 1.5rem;
-}
-
-.buttonGroup {
-  display: flex;
+.container section:first-child {
+  height: 100%;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
+  background-color: #fdfeff;
 }
 
-.button {
-  margin-left: 1rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  text-transform: uppercase;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  border: 1px solid white;
-  font-size: 1rem;
-  font-weight: bold;
+.container section:nth-child(2) {
+  overflow: scroll;
+  justify-content: center;
 }
 
-.button:hover {
-  background-color: green;
-  color: white;
+.container input {
+  margin: 7px 0px 14px 0px;
 }
 
-.button:active {
-  transform: scale(0.95);
-}
-
-.button:focus {
-  outline: none;
-}
-
-.link {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.link:hover {
-  color: #4a90e2;
-}
-
-.cancel {
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  box-shadow: none;
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-.cancel:hover {
-  color: red;
-  border-color: red;
-  background-color: transparent;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="file"] {
-  width: 400px;
-  padding: 0.5rem;
-  font-size: 1.2rem;
+.container input, button { 
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
   border-radius: 5px;
-  border: none;
-  background-color: #f2f2f2;
-  color: #333333;
-  margin-top: 0.5rem;
+  border: 1px solid rgb(220, 220, 220);
 }
 
-.loginRedirect {
+.container div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container label {
+  font-weight: 600;
+  margin: 7px 0px 14px 0px;
+}
+
+.container button {
   color: white;
-  margin-top: 1rem;
-  font-size: 1rem;
+  font-weight: 600;
+  background: #00a0df;
+  margin: 21px 0px 0px 0px;
+  cursor: pointer;
+}
+
+.container button:disabled {
+  color: rgb(200, 200, 200);
+  background-color: #f8f8f8;
+  cursor: not-allowed;
+}
+
+.container a {
+  border: none;
+  font-size: 14px;
+  background: none;
+  font-weight: 500;
+  margin-top: 14px;
+  text-align: center;
+  color: rgb(200, 200, 200);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #00a0df;
+}
+
+input[type="file"] {
+  padding: 0;
+  border: none;
+}
+
+input::file-selector-button { 
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 14px 28px;
+  margin-right: 28px;
+  text-align: center;
+  border: 1px solid rgb(220, 220, 220);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 912px) {
+  .container section {
+    width: 100%;
+  }
+  .container section:first-child {
+    display: none;
+  }
+  .container form {
+    min-width: 100%;
+  }
+}
+
+@media only screen and (max-height: 900px) {
+  .container section:nth-child(2) {
+    justify-content: flex-start;
+  }
 }

@@ -1,9 +1,16 @@
-import { NavLink } from "react-router-dom"
-// import { useState, useEffect } from "react"
-import styles from "./NavBar.module.css"
-import logo from "../../assets/styleswipe_logo.png"
+// npm modules
+import { NavLink } from 'react-router-dom'
 
-const NavBar = ({ user, handleLogout }) => {
+// assets
+import logo from '../../assets/branding/logo.svg'
+
+// css
+import styles from './NavBar.module.css'
+
+// components
+import WeatherInfo from '../WeatherInfo/WeatherInfo'
+
+const NavBar = ({ user, handleLogout, weather }) => {
   
   const publicLinks = (
     <ul>
@@ -19,15 +26,22 @@ const NavBar = ({ user, handleLogout }) => {
       <li>
         <NavLink to="/auth/logout" onClick={handleLogout}>LOG OUT</NavLink>
       </li>
+      {weather.weather && 
+        <li>
+          <WeatherInfo weather={weather} />
+        </li>
+      }
     </ul>
   )
 
   return (
     <nav className={styles.container}>
-      <NavLink to="/"><img src={logo} alt="Style Swipe Logo" /></NavLink>
+      <NavLink to="/"><img src={logo} alt="A cute owl" /></NavLink>
       {user ? protectedLinks : publicLinks}
     </nav>
   )
 }
 
 export default NavBar
+
+

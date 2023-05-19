@@ -1,9 +1,12 @@
 // npm modules
 import { useState, useRef } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 // services
 import * as authService from '../../services/authService'
+
+// assets
+import signupIcon from '../../assets/branding/signup.svg'
 
 // css
 import styles from './Signup.module.css'
@@ -50,7 +53,7 @@ const Signup = ({ handleAuthEvt }) => {
       imgInputRef.current.value = null
       return
     }
-
+    
     setPhotoData({ photo: evt.target.files[0] })
   }
 
@@ -63,9 +66,7 @@ const Signup = ({ handleAuthEvt }) => {
       setIsSubmitted(true)
       await authService.signup(formData, photoData.photo)
       handleAuthEvt()
-      //this is the correct navigation, but we need to pick a random outfit to navigate to, and navigate to a specific location if no outfits exist, that the user has not swiped on
-      // navigate(`/outfits/${outfitId}`)
-      navigate(`/outfits`) //this is hard coded in
+      navigate('/')
     } catch (err) {
       console.log(err)
       setMessage(err.message)
@@ -79,75 +80,70 @@ const Signup = ({ handleAuthEvt }) => {
     return !(name && email && password && password === passwordConf)
   }
 
-  const handleCancel = () => {
-    navigate('/')
-  }
-
   return (
-    <body className={styles.container}>
-      <h1>Sign Up</h1>
-      <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Name
-          <input type="text" value={name} name="name" onChange={handleChange} />
-        </label>
-        <label className={styles.label}>
-          Email
-          <input
-            type="text"
-            value={email}
-            name="email"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Password
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Confirm Password
-          <input
-            type="password"
-            value={passwordConf}
-            name="passwordConf"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Upload Photo
-          <input
+    <main className={styles.container}>
+      <section>
+        <img src={signupIcon} alt="An owl sitting on a sign" />
+      </section>
+      <section>
+        <form autoComplete="off" onSubmit={handleSubmit}>
+          <h1>Sign Up</h1>
+          <p>{message}</p>
+          <label>
+            Name
+            <input 
+              type="text"
+              value={name}
+              name="name"
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Email
+            <input
+              type="text"
+              value={email}
+              name="email"
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              name="password"
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Confirm Password
+            <input
+              type="password"
+              value={passwordConf}
+              name="passwordConf"
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Upload Photo
+            <input 
             type="file" 
             name="photo" 
             onChange={handleChangePhoto}
             ref={imgInputRef}
           />
-        </label>
-          <div className={styles.buttonGroup}>
-          <button
-            className={`${styles.button} ${styles.cancel}`}
-            type="button"
-            onClick={handleCancel}
-          >
-            Cancel
-          </button>
-          <button
-            className={styles.button}
-            disabled={isFormInvalid() || isSubmitted}
-          >
-            {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
-          </button>
+          </label>
+          <div>
+            <button disabled={isFormInvalid() || isSubmitted}>
+              {!isSubmitted ? 'SIGN UP' : '🚀 Sending...'}
+            </button>
+            <Link to="/">CANCEL</Link>
           </div>
-          <div className={styles.loginRedirect}>
-            <NavLink to="/auth/login">Already have an Account?</NavLink>
-          </div>
-      </form>
-    </body>
+        </form>
+      </section>
+    </main>
+      
   )
 }
 
