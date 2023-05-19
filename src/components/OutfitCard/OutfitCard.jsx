@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 
 // components
-import Icon from '../Icon/Icon'
 import AuthorInfo from '../AuthorInfo/AuthorInfo'
 
 // css
