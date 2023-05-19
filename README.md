@@ -7,8 +7,10 @@
  <img height=300px src="./src/assets/style-swipe.png" alt="Project logo"></a>
 </div>
 
-# Check out a user-based collection of the trendiest clothes on StyleSwipe
 
+<p style="font-size: 20px; text-align: center;">
+  Check out a user-based collection of the trendiest clothes on StyleSwipe
+</p>
 
 ## 🧐 About
 
