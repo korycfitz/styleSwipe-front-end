@@ -24,5 +24,5 @@ const OutfitCard = ({ outfit }) => {
     </Link>
   )
 }
- 
+
 export default OutfitCard
