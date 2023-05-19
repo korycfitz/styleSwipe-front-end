@@ -8,7 +8,6 @@ import logo from '../../assets/landing_logo.png'
 import styles from './NavBar.module.css'
 
 // components
-import WeatherInfo from '../WeatherInfo/WeatherInfo'
 
 const NavBar = ({ user, handleLogout, weather }) => {
   
