@@ -12,6 +12,13 @@
   position: relative;
 }
 
+.card {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
 .pictureFrame {
   position: relative;
   width: 100%;
@@ -35,9 +42,9 @@
   left: 10%;
   width: 80%;
   height: 80%;
-  object-fit:cover;
+  object-fit: cover;
   border-radius: 10%;
-  transform: scale(.75);
+  transform: scale(0.75);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -54,7 +61,7 @@
   text-align: center;
   border-radius: 5%;
   margin-top: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -65,3 +72,7 @@
   box-shadow: 0 4px 8px white;
 }
 
+
+div > p {
+  opacity: 1;
+}

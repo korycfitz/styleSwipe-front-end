@@ -58,14 +58,14 @@
 .container button {
   color: white;
   font-weight: 600;
-  background: #00a0df;
+  background: #434965;
   margin: 21px 0px 0px 0px;
   cursor: pointer;
 }
 
 .container button:disabled {
   color: rgb(200, 200, 200);
-  background-color: #f8f8f8;
+  background: #65435e;
   cursor: not-allowed;
 }
 
@@ -76,7 +76,7 @@
   font-weight: 500;
   margin-top: 14px;
   text-align: center;
-  color: rgb(200, 200, 200);
+  color: rgb(99, 84, 84);
 }
 
 input:focus {

@@ -56,7 +56,7 @@ button {
 .container button {
   color: white;
   font-weight: 600;
-  background: #00a0df;
+  background: #435765;
   margin: 21px 0px 0px 0px;
   cursor: pointer;
 }
@@ -74,7 +74,8 @@ button {
   font-weight: 500;
   margin-top: 14px;
   text-align: center;
-  color: rgb(200, 200, 200);
+  color: rgb(99, 84, 84);
+
 }
 
 input:focus {
