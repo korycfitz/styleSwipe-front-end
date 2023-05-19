@@ -29,7 +29,7 @@ const NavBar = ({ user, handleLogout }) => {
   
   return (
     <nav className={styles.nav}>
-      <div className={styles.logoContainer} onClick={handleLogoClick}>
+      <div className={styles.logoContainer} /*onClick={handleLogoClick}*/>
         <img id="app-logo" src={logo} alt="StyleSwipe" />
       </div>
       <ul className={styles.navLinks}>
