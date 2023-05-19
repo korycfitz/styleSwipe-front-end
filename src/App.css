@@ -10,12 +10,12 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: canada-type-gibson, sans-serif;
-  background-image: url('../src/assets/styleswipe_background.png');
   --primary: #00a0df;
   --background: #f2f4f8;
   --card-background: white;
   --border: rgb(220, 220, 220);
 }
+
 
 #root {
   height: 100%;
