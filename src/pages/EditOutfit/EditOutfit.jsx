@@ -47,5 +47,5 @@ const EditOutfit = (props) => {
     </main>
   )
 }
- 
+
 export default EditOutfit;

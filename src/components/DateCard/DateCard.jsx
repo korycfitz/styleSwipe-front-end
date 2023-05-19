@@ -9,7 +9,9 @@ const DateCard = ({ createdAt }) => {
   return (
     <div className={styles.container}>
       <Icon category="Calendar" />
-      <h5>{date}</h5>
+      <h5>
+        {date}
+      </h5>
     </div>
   )
 }

@@ -46,5 +46,5 @@ const NewOutfit = (props) => {
     </main>
   )
 }
- 
+
 export default NewOutfit

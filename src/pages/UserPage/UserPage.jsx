@@ -1,9 +1,12 @@
+// npm modules
 import { Link } from "react-router-dom"
+
+// css
 import styles from "./UserPage.module.css"
 
 
 const UserPage = ({user}) => {
-  console.log(user)
+
   return (
     <div className={styles.container}>
       <div className={styles.buttonContainer}>

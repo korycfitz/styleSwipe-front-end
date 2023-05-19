@@ -142,7 +142,6 @@ const Signup = ({ handleAuthEvt }) => {
         </form>
       </section>
     </main>
-      
   )
 }
 

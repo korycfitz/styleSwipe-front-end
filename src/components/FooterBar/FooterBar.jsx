@@ -1,3 +1,4 @@
+// components
 import { NavLink } from "react-router-dom"
 import styles from "./FooterBar.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
