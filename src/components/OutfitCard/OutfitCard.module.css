@@ -3,11 +3,13 @@
   height: 220px;
   padding: 14px 21px;
   border-radius: 5px;
-  border: 1px solid var(--border);
   background-color: var(--card-background);
-  box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
-  -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
-  -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
 .container header {
@@ -17,15 +19,15 @@
 .container span {
   display: flex;
   align-items: center;
-  margin: 7px 0px 12px 0px;
   justify-content: space-between;
+  margin: 7px 0px 12px 0px;
 }
 
 .container span img {
   margin: 0;
   width: 32px;
-	height: 32px;
-  opacity: .8;
+  height: 32px;
+  opacity: 0.8;
   padding: 3px;
   border-radius: 50%;
   border: 1px solid var(--border);
@@ -65,11 +67,44 @@
 
 .container div > img {
   width: 30px;
-	height: 30px;
-	object-fit: cover;
+  height: 30px;
+  object-fit: cover;
 }
 
 .container div section img {
   width: 14px;
-	height: 14px;
+  height: 14px;
+}
+
+.outer-container {
+  background-color: var(--green);
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.outer-container:hover {
+  transform: translateY(-5px);
+}
+
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background-color: var(--glow-color);
+  opacity: 0;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::before {
+  opacity: 0.3;
 }
