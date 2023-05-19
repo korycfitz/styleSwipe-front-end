@@ -1,6 +1,6 @@
 // css
 import styles from './Landing.module.css'
-import logo from '../../assets/landing_logo.png'
+import logo from '../../assets/styleswipe_logo.png'
 
 const Landing = () => {
   return (

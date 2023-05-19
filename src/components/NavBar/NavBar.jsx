@@ -31,8 +31,7 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logoContainer} onClick={handleLogoClick}>
-        <img id="app-logo" src={logo} width="50" height="50" alt="StyleSwipe" />
-        <h1>StyleSwipe</h1>
+        <img id="app-logo" src={logo} alt="StyleSwipe" />
       </div>
       <ul className={styles.navLinks}>
         {user ? (
