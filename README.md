@@ -17,6 +17,7 @@
 <p>
   StyleSwipe is a MERN stack app using JWT Authentication. Upload, browse, and comment on outfits posted from other users across the web.
 </p>
+<br>
 
 ## 🏁 Getting Started
 
