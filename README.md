@@ -15,7 +15,7 @@
 ## 🧐 About
 
 <p>
-  StyleSwipe is a MERN stack app using JWT Authentication. Upload, browse, and comment on outfits posted from other users across the web.
+  StyleSwipe is a MERN stack app using JWT Authentication. Upload, browse, and comment on outfits posted by other users across the web.
 </p>
 <br>
 
@@ -27,7 +27,7 @@
 <br><br>
 ## Highlight
 <p>
-  StyleSwipe takes into account the logged in user when displaying all outfits, and will use those passed parameters to create a personalized index of all the logged in user's outfits. This was a big stepping stone in understanding how information is passed from the back end to front by URI calls. 
+  StyleSwipe takes into account the logged-in user and can display all outfits of that particular user. We use passed parameters taken from the req.body to create a personalized index of all the logged-in user's outfits. This was a big stepping stone in understanding how information is passed from the back end to the front by URI calls.
 </p>
 
 ```
@@ -46,7 +46,7 @@ async function outfitIndex(req, res) {
 ```
 <br>
 
-## ✍️ Authors
+## ✍️ Contributors
 - [Kory Fitzgerald](https://github.com/korycfitz/)
 - [Rafi Talukder](https://github.com/RT527/)
 - [Christian Musto](https://github.com/officialmusto/)
@@ -90,4 +90,4 @@ async function outfitIndex(req, res) {
 - Iterate on the current styling.
 - AAU, I want to click a button, so that I can message another user using socket.io.
 - AAU, I want to swipe 'slay' or 'nay' on an outfit, so that I can view the outfits that I have 'slayed' or 'nayed'.
-- AAU, I want to see a random outfit after I log in, so that I can 'slay' or 'nay' it.
+- AAU, I want to see a random outfit after I log in so that I can 'slay' or 'nay' it.
