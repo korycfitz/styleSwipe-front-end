@@ -1,49 +1,38 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 20px;
+  background: #f1f1f1;
+}
+
 .container {
   padding: 20px;
 }
 
+.card {
+  border-radius: 25px;
+  background-color: rgb(154, 153, 153);
+}
+
 .profileList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
 }
 
-.profileBox {
-  position: relative;
-}
-
-.card {
-  background-color: white;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.pictureFrame {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 100%;
-  overflow: hidden;
-}
-
-.pictureFrameImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 .profileImage {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 80%;
-  height: 80%;
-  object-fit: cover;
-  border-radius: 10%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border-radius: 10px;
   transform: scale(0.75);
   transition: transform 0.3s ease-in-out;
 }
@@ -52,24 +41,22 @@
   transform: scale(1.1);
 }
 
+.pictureSpace {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .profileName {
   font-size: 23px;
   font-weight: bold;
+  background: #f1f1f1;
   color: black;
-  background-color: white;
   padding: 5px;
+  border-radius: 50px;
   text-align: center;
-  border-radius: 5%;
   margin-top: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.profileName:hover {
-  background-color: black;
-  transform: scale(1.05);
-  color: white;
-  box-shadow: 0 4px 8px white;
 }
 
 
