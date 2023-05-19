@@ -1,5 +1,10 @@
+// npm modules
 import { useState, useEffect } from 'react'
+
+// services
 import * as profileService from '../../services/profileService'
+
+// css
 import styles from './Profiles.module.css'
 import fake from '../../assets/no_userprofile_picture.png'
 import pictureFrameImage from '../../assets/picture_frame.png'

@@ -7,7 +7,9 @@ const CommentCard = ({ comment }) => {
       <header>
         <AuthorInfo content={comment} />
       </header>
-      <p>{comment.content}</p>
+      <p>
+        {comment.content}
+      </p>
     </article>
   )
 }

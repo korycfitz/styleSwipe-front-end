@@ -31,7 +31,6 @@ const outfitDetails = (props) => {
   const handleAddComment = async (commentFormData) => {
     const newComment = await outfitService.createComment(outfitId, commentFormData)
     setOutfit({ ...outfit, comments: [...outfit.comments, newComment],})
-    console.log(newComment.content)
   }
   
   if (!outfit) return <Loading /> 
@@ -66,5 +65,5 @@ const outfitDetails = (props) => {
     </main>
   )
 }
- 
+
 export default outfitDetails

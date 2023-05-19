@@ -1,5 +1,3 @@
-// assets
-
 // css
 import styles from './Logout.module.css'
 
