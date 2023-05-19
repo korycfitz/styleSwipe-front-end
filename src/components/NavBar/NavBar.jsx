@@ -1,13 +1,10 @@
-// npm modules
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import * as profileService from '../../services/profileService';
+import styles from './NavBar.module.css';
+import logo from '../../assets/styleswipe_logo.png';
+import fake from '../../assets/no_userprofile_picture.png';
 
-// assets
-import logo from '../../assets/styleswipe_logo.png'
-
-// css
-import styles from './NavBar.module.css'
-
-// components
 
 const NavBar = ({ user, handleLogout }) => {
   

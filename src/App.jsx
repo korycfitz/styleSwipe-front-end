@@ -14,6 +14,7 @@ import EditOutfit from './pages/EditOutfit/EditOutfit'
 
 // components
 import NavBar from './components/NavBar/NavBar'
+import FooterBar from './components/FooterBar/FooterBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
@@ -110,6 +111,7 @@ function App() {
           element={<Login handleAuthEvt={handleAuthEvt} />}
         />
       </Routes>
+      <FooterBar user={user} />
     </>
   )
 }
