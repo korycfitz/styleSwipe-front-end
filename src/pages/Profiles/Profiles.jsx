@@ -1,10 +1,5 @@
-// npm modules
 import { useState, useEffect } from 'react'
-
-// services
 import * as profileService from '../../services/profileService'
-
-// css
 import styles from './Profiles.module.css'
 import fake from '../../assets/no_userprofile_picture.png'
 import pictureFrameImage from '../../assets/picture_frame.png'
@@ -34,19 +29,21 @@ const Profiles = () => {
       <div className={styles.profileList}>
         {profiles.map((profile) => (
           <div className={styles.profileBox} key={profile._id}>
-            <div className={styles.pictureFrame}>
-              <img
-                src={pictureFrameImage}
-                alt="Picture Frame"
-                className={styles.pictureFrameImage}
-              />
-              <img
-                src={profile.photo || fake}
-                alt={profile.name}
-                className={styles.profileImage}
-              />
+            <div className={styles.card}>
+              <div className={styles.pictureFrame}>
+                <img
+                  src={pictureFrameImage}
+                  alt="Picture Frame"
+                  className={styles.pictureFrameImage}
+                />
+                <img
+                  src={profile.photo || fake}
+                  alt={profile.name}
+                  className={styles.profileImage}
+                />
+              </div>
+              <p className={styles.profileName}>{profile.name}</p>
             </div>
-            <p className={styles.profileName}>{profile.name}</p>
           </div>
         ))}
       </div>
