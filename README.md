@@ -4,7 +4,7 @@
 <br>
 
 <div align="center">
- <img height=300px src="./src/assets/style-swipe.png" alt="Project logo"></a>
+ <img height=300px src="./public/style-swipe.png" alt="Project logo"></a>
 </div>
 
 
