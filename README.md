@@ -80,3 +80,4 @@ async function outfitIndex(req, res) {
 * [ ]
 * [ ]
 * [ ]
+<br>
