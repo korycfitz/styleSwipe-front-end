@@ -9,8 +9,6 @@ const EditOutfit = (props) => {
   const location = useLocation()
   const [formData, setFormData] = useState(location.state)
 
-  console.log(location);
-
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
@@ -24,41 +22,26 @@ const EditOutfit = (props) => {
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
         <h1>Edit Outfit</h1>
-        <label htmlFor="title-input">Title</label>
+        <label htmlFor="title-input">Outfit URL</label>
         <input
           required
           type="text"
-          name="title"
+          name="photo"
           id="title-input"
-          value={formData.title}
-          placeholder="Title"
+          value={formData.photo}
+          placeholder="Outfit URL"
           onChange={handleChange}
         />
         <label htmlFor="text-input">Text</label>
         <textarea
           required
           type="text"
-          name="text"
+          name="description"
           id="text-input"
-          value={formData.text}
+          value={formData.description}
           placeholder="Text"
           onChange={handleChange}
         />
-        <label htmlFor="category-input">Category</label>
-        <select
-          required
-          name="category"
-          id="category-input"
-          value={formData.category}
-          onChange={handleChange}
-        >
-          <option value="News">News</option>
-          <option value="Games">Games</option>
-          <option value="Music">Music</option>
-          <option value="Movies">Movies</option>
-          <option value="Sports">Sports</option>
-          <option value="Television">Television</option>
-        </select>
         <button type="submit">SUBMIT</button>
       </form>
     </main>

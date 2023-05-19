@@ -49,3 +49,6 @@ input:focus, select:focus, textarea:focus {
   outline: none;
   border: 1px solid var(--primary);
 }
+main {
+  margin-top: 100px;
+}

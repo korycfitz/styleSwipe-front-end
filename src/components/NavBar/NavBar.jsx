@@ -43,3 +43,5 @@ const NavBar = ({ user, handleLogout, weather }) => {
 }
 
 export default NavBar
+
+

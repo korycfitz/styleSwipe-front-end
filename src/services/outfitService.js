@@ -3,9 +3,6 @@ import * as tokenService from './tokenService'
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/outfits`
 
-// ALL REQUESTS IN THIS FILE WILL BEGIN WITH:
-// http://localhost:3001/api/outfits
-
 async function index() {
   try {
     const res = await fetch(BASE_URL, {
@@ -30,7 +27,6 @@ async function show(outfitId) {
 
 async function create(outfitFormData) {
   try {
-    // BASE_URL IS POST http://localhost:3001/api/blogs
     const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: { 
@@ -61,7 +57,7 @@ async function update(outfitFormData) {
   }
 }
 
-async function deleteBlog(outfitId) {
+async function deleteOutfit(outfitId) {
   try {
     const res = await fetch(`${BASE_URL}/${outfitId}`, {
       method: 'DELETE',
@@ -75,7 +71,6 @@ async function deleteBlog(outfitId) {
 
 async function createComment(outfitId, commentFormData) {
   try {
-    // POST http://localhost:3001/api/blogs/:outfitId/comments
     const res = await fetch(`${BASE_URL}/${outfitId}/comments`, {
       method: 'POST',
       headers: { 
@@ -95,6 +90,6 @@ export {
   show, 
   create, 
   update,
-  deleteBlog as delete,
+  deleteOutfit as delete,
   createComment
 }

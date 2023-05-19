@@ -14,15 +14,15 @@ const OutfitCard = ({ outfit }) => {
       <article className={styles.container}>
         <header>
           <span>
-            <h1>{ outfit.title }</h1>
+            <h1>{ outfit.photo }</h1>
             <Icon category={outfit.category} />
           </span>
           <AuthorInfo content={outfit} />
         </header>
-        <p>{ outfit.text }</p>
+        <p>{ outfit.description }</p>
       </article>
     </Link>
   )
 }
-
+ 
 export default OutfitCard

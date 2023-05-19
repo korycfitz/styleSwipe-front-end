@@ -15,44 +15,44 @@ import * as outfitService from '../../services/outfitService'
 // css
 import styles from './OutfitDetails.module.css'
 
-const OutfitDetails = (props) => {
+const outfitDetails = (props) => {
   const { outfitId } = useParams()
-  const [outfit, setoutfit] = useState(null)
+  const [outfit, setOutfit] = useState(null)
 
   useEffect(() => {
     const fetchOutfit = async () => {
       const data = await outfitService.show(outfitId)
-      setoutfit(data)
+      setOutfit(data)
     }
     fetchOutfit()
   }, [outfitId])
 
   const handleAddComment = async (commentFormData) => {
     const newComment = await outfitService.createComment(outfitId, commentFormData)
-    setoutfit({ ...outfit, comments: [...outfit.comments, newComment],})
+    setOutfit({ ...outfit, comments: [...outfit.comments, newComment],})
   }
-
-  console.log('outfit state:', outfit);
   
-  if (!outfit) return <Loading />
+  if (!outfit) return <Loading /> 
 
   return (
     <main className={styles.container}>
       <article>
         <header>
-          <h3>{outfit.category.toUpperCase()}</h3>
-          <h1>{outfit.title}</h1>
+          <h1>{outfit.description}</h1>
         </header>
         <span>
           <AuthorInfo content={outfit} />
           {outfit.author._id === props.user.profile &&
             <>
               <Link to={`/outfits/${outfitId}/edit`} state={outfit}>Edit</Link>
-              <button onClick={() => props.handleDeleteoutfit(outfitId)}>
+              <button onClick={() => props.handleDeleteOutfit(outfitId)}>
                 Delete
               </button>
             </>
           }
+        </span>
+        <span>
+          <img src={outfit.photo} alt="Image of an Outfit" />
         </span>
         <p>{outfit.description}</p>
       </article>
@@ -64,4 +64,4 @@ const OutfitDetails = (props) => {
   )
 }
  
-export default OutfitDetails
+export default outfitDetails

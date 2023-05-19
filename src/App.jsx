@@ -19,7 +19,6 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as outfitService from './services/outfitService'
-import { getWeatherDataFromAPI } from './services/weatherService'
 
 // styles
 import './App.css'
@@ -27,25 +26,7 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [outfits, setOutfits] = useState([])
-  const [coords, setCoords] = useState({})
-  const [weather, setWeather] = useState({})
   const navigate = useNavigate()
-
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(position => {
-      if (coords.lat) return
-      setCoords({lat: position.coords.latitude, lng: position.coords.longitude})
-    }, err => {
-      console.log(err)
-    })
-    const fetchWeatherWithCoords = async () => {
-      if (!coords.lat) return
-      const weatherData = await getWeatherDataFromAPI(coords.lat, coords.lng)
-      setWeather(weatherData)
-    }
-    fetchWeatherWithCoords()
-  }, [coords])
-
 
   useEffect(() => {
     const fetchAllOutfits = async () => {
@@ -65,8 +46,8 @@ function App() {
   }
 
   const handleAddOutfit = async (outfitFormData) => {
-    const NewOutfit = await outfitService.create(outfitFormData)
-    setOutfits([NewOutfit, ...outfits])
+    const newOutfit = await outfitService.create(outfitFormData)
+    setOutfits([newOutfit, ...outfits])
     navigate('/outfits')
   }
 
@@ -78,13 +59,13 @@ function App() {
 
   const handleDeleteOutfit = async (outfitId) => {
     const deletedOutfit = await outfitService.delete(outfitId)
-    setOutfits(blogs.filter(b => b._id !== deletedOutfit._id))
+    setOutfits(outfits.filter(b => b._id !== deletedOutfit._id))
     navigate('/outfits')
   }
 
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} weather={weather} />
+      <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route
@@ -134,3 +115,4 @@ function App() {
 }
 
 export default App
+
