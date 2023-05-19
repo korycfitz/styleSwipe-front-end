@@ -16,7 +16,7 @@ import * as outfitService from '../../services/outfitService'
 import styles from './OutfitDetails.module.css'
 
 const outfitDetails = (props) => {
-  const { outfitId } = useParams()
+  const { outfitId } = useParams() 
   const [outfit, setOutfit] = useState(null)
 
   useEffect(() => {
