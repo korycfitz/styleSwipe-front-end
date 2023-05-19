@@ -2,14 +2,14 @@
 import { NavLink } from 'react-router-dom'
 
 // assets
-import logo from '../../assets/landing_logo.png'
+import logo from '../../assets/styleswipe_logo.png'
 
 // css
 import styles from './NavBar.module.css'
 
 // components
 
-const NavBar = ({ user, handleLogout, weather }) => {
+const NavBar = ({ user, handleLogout }) => {
   
   const publicLinks = (
     <ul>
@@ -30,7 +30,7 @@ const NavBar = ({ user, handleLogout, weather }) => {
 
   return (
     <nav className={styles.container}>
-      <NavLink to="/"><img src={logo} alt="A cute owl" /></NavLink>
+      <NavLink to="/"><img src={logo} alt="StyleSwipe" /></NavLink>
       {user ? protectedLinks : publicLinks}
     </nav>
   )
