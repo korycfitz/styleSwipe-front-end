@@ -1,6 +1,11 @@
+// npm modules
 import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+
+// services
 import * as profileService from '../../services/profileService'
+
+// css
 import styles from './NavBar.module.css'
 import logo from '../../assets/styleswipe_logo.png'
 import fake from '../../assets/no_userprofile_picture.png'
