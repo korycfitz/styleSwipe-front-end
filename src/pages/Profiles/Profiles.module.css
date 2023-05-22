@@ -3,6 +3,13 @@
   padding-bottom: 80px;
 }
 
+.titleBox {
+  background-color: #F2F4F8;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
 .profileList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
