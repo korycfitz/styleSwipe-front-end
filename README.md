@@ -62,6 +62,7 @@ async function outfitIndex(req, res) {
 - Docker
 - [fly.io](https://fly.io/)
 - Git
+- JWT Auth
 - [Postman](https://www.postman.com/)
 - [Node.js](https://nodejs.org/en/)
 - Vite
