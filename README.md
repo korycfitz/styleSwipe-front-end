@@ -69,11 +69,10 @@ async function outfitIndex(req, res) {
 - [MongoDB](https://www.mongodb.com/)
 - [Express.js](https://expressjs.com/)
 - [Cloudinary](https://cloudinary.com/)
-- [Whimsicial](https://whimsical.com/)
+- [Whimsical](https://whimsical.com/)
 - [Trello](https://trello.com/)
 - [Github](https://github.com/)
 - [Visual Studio Code](https://code.visualstudio.com/) 
-- [Trello](https://trello.com/)
 - [Mongoose](https://mongoosejs.com/)
 <br>
 
