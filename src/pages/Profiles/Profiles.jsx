@@ -25,7 +25,9 @@ const Profiles = () => {
 
   return (
     <main className={styles.container}>
-      <h1>All Profiles</h1>
+      <div className={styles.titleBox}>
+        <h1>All Profiles</h1>
+      </div>
       <div className={styles.profileList}>
         {profiles.map((profile) => (
           <div className={styles.profileBox} key={profile._id}>

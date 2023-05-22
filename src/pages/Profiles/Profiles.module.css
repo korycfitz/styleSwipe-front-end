@@ -1,5 +1,13 @@
 .container {
   padding: 20px;
+  padding-bottom: 80px;
+}
+
+.titleBox {
+  background-color: #F2F4F8;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .profileList {
@@ -63,6 +71,7 @@
   margin-top: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  z-index: 1;
 }
 
 .profileName:hover {
@@ -71,7 +80,6 @@
   color: white;
   box-shadow: 0 4px 8px white;
 }
-
 
 div > p {
   opacity: 1;
